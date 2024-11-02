@@ -1,7 +1,6 @@
 /* HEADER */
 .encabezado{
     width: 100vw;
-    color: var(--color1);
 }
 
 /* NAVEGATION BAR */
@@ -75,7 +74,7 @@ nav {
     font-family: var(--estilot);
     font-weight: bolder;
     text-align: center;
-    color: var(--color2);
+    color: var(--CNTexto);
 
     border: solid var(--color2);
     border-radius: 20px;
