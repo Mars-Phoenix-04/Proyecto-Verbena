@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 :root{
     /*PALETA DE COLORES*/
     --color1: #00B761;
@@ -8,8 +9,9 @@
     --color6: #00FB86;
     /*TEXTO*/
     --CTexto: black;
+    --CTexto: white;
     --tamano: 18px;
-    --estiloT:"Dancing Script", cursive;
+    --estiloT:"Patua One", serif;
     --estilot:"Raleway", sans-serif;
 }
 *{
