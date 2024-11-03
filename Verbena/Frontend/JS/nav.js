@@ -1,6 +1,5 @@
 function toggleDropdown() {
     const dropdown = document.getElementById('forosDropdown');
-    
     if (!dropdown.classList.contains('show')) {
         dropdown.style.display = 'block';
         setTimeout(() => {

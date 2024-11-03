@@ -3,7 +3,6 @@
     justify-content: center;
     grid-column: 5/5;
 }
-
 .user-container {
     display: flex;
     align-items: center;
@@ -19,18 +18,15 @@
     cursor: pointer;
     transition: 0.3s ease-in-out;
 }
-
 .user-container:hover {
     background-color: var(--color2);
 }
-
 .icono {
     position: absolute;
     left: -13%; 
     max-width: 33%;
     border-radius: 50%;
 }
-
 .username {
     margin-left: 20%; 
 }
