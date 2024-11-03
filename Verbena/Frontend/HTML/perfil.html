@@ -1,76 +1,108 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="icon" type="image/x-icon" href="Assets/Ico/favicon.ico">
-    <title>Akainku</title>
-    <link rel='stylesheet' type='text/css' media='screen' href='CSS/nav.css'>
-    <link rel='stylesheet' type='text/css' media='screen' href='CSS/cerrar.css'>
-    <link rel='stylesheet' type='text/css' media='screen' href='CSS/main.css'>
-    <link rel='stylesheet' type='text/css' media='screen' href="CSS/invusuario.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- PESTAÑA E ICONO -->
+    <link rel="icon" type="image/x-icon" href="../Assets/ico/favicon.ico">
+    <title>Usuario - Verbena</title>
+    <!-- Hojas de estilo -->
+    <link rel='stylesheet' type='text/css' href='../CSS/parts/nav.css'>
+    <link rel='stylesheet' type='text/css' href='../CSS/parts/piepagina.css'>
+    <link rel='stylesheet' type='text/css' href='../CSS/parts/botones.css'>
+    <link rel='stylesheet' type='text/css' href='../CSS/main.css'>
+    <!-- Hojas de estilo UNICA-->
+    <link rel='stylesheet' type='text/css' href='../CSS/pages/inicio.css'>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Patua+One&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <!--INICIO DE ENCABEZADO / BARRA DE NAVEGACION-->
     <header id="inicio" class="encabezado">
-
         <nav id="navbar" class="navegacion">
             <div class="nav-container">
-
-                <!--Logo de Akainku-->
+                <!-- Logo de Verbena -->
                 <div class="logo">
-                    <a href="index.html">
-                        <img src="Assets/Img/PNG/AkainkuWhiteName.png" alt="Logo">
+                    <a href="../index.html">
+                        <img src="../Assets/Img/png/VerbenaIsologo.png" alt="Logo">
                     </a>    
                 </div>
-                
-                <!--Links del nav-->
-                <div class="nav-links">
-                    <a class="link-item" href="index.html" style="margin-left: 0;">Inicio</a>
-                    <a class="link-item" id="canvas-link" href="HTML/canvas.html">Canvas</a>
-                    <a class="link-item" id="gallery-link" href="HTML/gallery.html">Galería</a>
-                </div>
-
-                <!--Inicio de sesion-->
+                <!-- Link Foros con desplegable -->
+                <div id="foros" onclick="toggleDropdown()">Foros</div>
+                <!-- Botones de inicio de sesión y registro -->
                 <div class="loginav" id="iniciosesion">
-                    <a href="HTML/login.html">
-                    <button id="boton">Iniciar Sesion</button>
+                    <a href="../HTML/iniciarsesion.html">
+                        <button id="boton">Iniciar Sesión</button>
                     </a>
                 </div>
-
-                <!--Usuario-->
-                <div class="user">
-                    <div class="usertype" id="Artista" style="display: none;">
-                        <img class="icono" src="../Assets/Img/SVG/Artista.svg">
-                        Artista
-                    </div>
-                    <div class="usertype" id="Visitante" style="display: none;">
-                        <img class="icono" src="../Assets/Img/SVG/VisitanteRed.svg">
-                        Visitante
-                    </div>
-                </div>
-                <!--Cerrar sesion-->
-                <div class="cerrarsesion" id="cierrosesion" style="display: none; margin-top: 5%;">
-                    <a href="HTML/login.html">
-                    <button id="boton" style="padding: 4% 48%;" onclick="cerrarSesion()">Cerrar Sesion</button>
+                <div class="signav" id="crearcuenta">
+                    <a href="../HTML/registro.html">
+                        <button id="botongris">Crear Cuenta</button>
                     </a>
                 </div>
-
             </div>  
         </nav>
-
+        <div id="forosDropdown" class="dropdown-content">
+            <div class="dropdown-grid">
+                <div class="dropdown-item">
+                    <img src="../Assets/Img/cuidado_plantas.jpg" alt="Cuidado de Plantas">
+                    <p>Cuidado de Plantas</p>
+                </div>
+                <div class="dropdown-item">
+                    <img src="../Assets/Img/manualidades.jpg" alt="Manualidades">
+                    <p>Manualidades</p>
+                </div>
+                <div class="dropdown-item">
+                    <img src="../Assets/Img/3R.jpg" alt="Las 3R">
+                    <p>Las 3R</p>
+                </div>
+            </div>
+        </div>
     </header>
-
-    <!--Contenido principal de la pagina-->
+    <!-- Contenido principal de la página -->
     <main>
-        <img src="Assets/Img/SVG/Inicio.svg" style="height: 100%;">
+        <p>Hola</p>
     </main>
+    <!-- Pie de página -->
+    <footer class="footer">
+        <div class="FGC">
+            <!-- Logo y Sobre Nosotros -->
+            <div class="FS about">
+                <img src="../Assets/Img/svg/VerbenaIsologoNegativo.svg" alt="Verbena Logo" class="FLogo">
+                <h3 style="margin: 2% 0%;">Sobre Nosotros</h3>
+                <p>
+                    Verbena es una plataforma de foros en línea que busca crear conciencia ambiental e
+                    invitar a las personas a tener un pensamiento verde y utilizar su creatividad
+                    para el bien del ambiente.
+                </p>
+            </div>
+            <!-- Foros, Legal y Contactos-->
+            <div class="FS info">
+                <div class="foros">
+                    <h3>FOROS</h3>
+                    <ul>
+                        <li><a href="/HTML/foros.html">Cuidado de plantas</a></li>
+                        <li><a href="/HTML/foros.html">Manualidades</a></li>
+                        <li><a href="/HTML/foros.html">Las 3R</a></li>
+                    </ul>
+                </div>
+                <div class="legal">
+                    <h3>LEGAL</h3>
+                    <ul>
+                        <li><a href="#">Acuerdo de Usuario</a></li>
+                        <li><a href="#">Términos del usuario</a></li>
+                        <li><a href="#">Política de privacidad</a></li>
+                    </ul>
+                </div>
+                <div class="contact">
+                    <h3>CONTACTO</h3>
+                    <p><strong>Email:</strong> ejemplo@dominio.com</p>
+                    <p><strong>Tel:</strong> (+52) 656-XXX-XXXX</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
-<script src="JS/user.js"></script>
-<script src="JS/check.js"></script>
+<!-- Script de JavaScript -->
+<script src="../JS/nav.js"></script>
 </html>
