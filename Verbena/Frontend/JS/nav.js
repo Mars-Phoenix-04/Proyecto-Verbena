@@ -2,6 +2,8 @@
 function toggleDropdown() {
     var dropdown = document.getElementById("forosDropdown");
     dropdown.classList.toggle("show");
+    const flecha = document.getElementById("foroflecha");
+    flecha.classList.toggle("active");
 }
 
 // Cierra el dropdown si se hace clic fuera del área de "Foros" o del mismo dropdown

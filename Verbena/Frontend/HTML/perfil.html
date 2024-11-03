@@ -6,7 +6,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <!-- PESTAÑA E ICONO -->
     <link rel="icon" type="image/x-icon" href="../Assets/ico/favicon.ico">
-    <title>Usuario - Verbena</title>
+    <title>Perfil de Usuario - Verbena</title>
     <!-- Hojas de estilo -->
     <link rel='stylesheet' type='text/css' href='../CSS/parts/nav.css'>
     <link rel='stylesheet' type='text/css' href='../CSS/parts/piepagina.css'>
@@ -28,7 +28,13 @@
                     </a>    
                 </div>
                 <!-- Link Foros con desplegable -->
-                <div id="foros" onclick="toggleDropdown()">Foros</div>
+                <div id="foros" onclick="toggleDropdown()">
+                    Foros
+                    <div id="foroflecha" class="flecha">
+                    <span></span>
+                    </div>
+                </div>
+                
                 <!-- Botones de inicio de sesión y registro -->
                 <div class="loginav" id="iniciosesion">
                     <a href="../HTML/iniciarsesion.html">
@@ -45,25 +51,31 @@
         <div id="forosDropdown" class="DContent">
             <div class="DGrid">
                 <div class="Categoria">
+                    <a href="../HTML/foros.html" class="nodec">
                     <img src="../Assets/Img/jpg/CPNav.jpg" alt="Cuidado de Plantas" class="DDI">
                     <div class="IT">
                         <img src="../Assets/Img/svg/CPINav.svg" alt="Ícono Cuidado de Plantas" class="icon">
-                        <p>Cuidado de Plantas</p>
+                        <p class="ITLink">Cuidado de Plantas</p>
                     </div>
+                    </a>
                 </div>
                 <div class="Categoria">
+                    <a href="../HTML/foros.html" class="nodec">
                     <img src="../Assets/Img/jpg/ManNav.jpg" alt="Manualidades" class="DDI">
                     <div class="IT">
                         <img src="../Assets/Img/svg/MINav.svg" alt="Ícono Manualidades" class="icon">
-                        <p>Manualidades</p>
+                        <p class="ITLink">Manualidades</p>
                     </div>
+                    </a>
                 </div>
                 <div class="Categoria">
+                    <a href="../HTML/foros.html" class="nodec">
                     <img src="../Assets/Img/jpg/3RNav.jpg" alt="Las 3R" class="DDI">
                     <div class="IT">
                         <img src="../Assets/Img/svg/3RINav.svg" alt="Ícono Las 3R" class="icon">
-                        <p>Las 3R</p>
+                        <p class="ITLink">Las 3R</p>
                     </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -90,9 +102,9 @@
                 <div class="foros">
                     <h3>FOROS</h3>
                     <ul>
-                        <li><a href="/HTML/foros.html">Cuidado de plantas</a></li>
-                        <li><a href="/HTML/foros.html">Manualidades</a></li>
-                        <li><a href="/HTML/foros.html">Las 3R</a></li>
+                        <li><a href="..//HTML/foros.html">Cuidado de plantas</a></li>
+                        <li><a href="..//HTML/foros.html">Manualidades</a></li>
+                        <li><a href="..//HTML/foros.html">Las 3R</a></li>
                     </ul>
                 </div>
                 <div class="legal">

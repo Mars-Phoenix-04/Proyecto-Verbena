@@ -53,7 +53,7 @@
     font-size: 0.9rem;
     position: relative;
 }
-a::after {
+.FS ul li a::after {
     position: absolute; 
     content: ""; 
     background-color: white; 
@@ -63,7 +63,7 @@ a::after {
     height: 3px; 
     transition: width 0.3s ease;
 }
-a:hover::after {
+.FS ul li a:hover::after {
     width: 100%; 
 }
 /* Contacto MARGEN PORQUE NO LO TIENE POR NO SER LISTA */
