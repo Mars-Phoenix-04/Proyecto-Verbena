@@ -1,0 +1,36 @@
+.user {
+    display: flex;
+    justify-content: center;
+    grid-column: 5/5;
+}
+
+.user-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 2% 5%;
+    background-color: var(--color3); 
+    border-radius: 20px;
+
+    font-family: var(--estilot);
+    font-size: 1rem;
+    color: var(--CNTexto);
+
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.user-container:hover {
+    background-color: var(--color2);
+}
+
+.icono {
+    position: absolute;
+    left: -13%; 
+    max-width: 33%;
+    border-radius: 50%;
+}
+
+.username {
+    margin-left: 20%; 
+}

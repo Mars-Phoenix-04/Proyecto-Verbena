@@ -6,12 +6,13 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <!-- PESTAÑA E ICONO -->
     <link rel="icon" type="image/x-icon" href="../Assets/ico/favicon.ico">
-    <title>Perfil de Usuario - Verbena</title>
+    <title>Perfil de Usuario - Verbena Plantas & Manualidades & 3R</title>
     <!-- Hojas de estilo -->
     <link rel='stylesheet' type='text/css' href='../CSS/parts/nav.css'>
     <link rel='stylesheet' type='text/css' href='../CSS/parts/piepagina.css'>
     <link rel='stylesheet' type='text/css' href='../CSS/parts/botones.css'>
     <link rel='stylesheet' type='text/css' href='../CSS/main.css'>
+    <link rel='stylesheet' type='text/css' href='../CSS/parts/user.css'>
     <!-- Hojas de estilo UNICA-->
     <link rel='stylesheet' type='text/css' href='../CSS/pages/inicio.css'>
     <!-- Google Fonts -->
@@ -36,16 +37,23 @@
                 </div>
                 
                 <!-- Botones de inicio de sesión y registro -->
-                <div class="loginav" id="iniciosesion">
+                <div class="loginav" id="iniciosesion" style="display: none;">
                     <a href="../HTML/iniciarsesion.html">
                         <button id="boton">Iniciar Sesión</button>
                     </a>
                 </div>
-                <div class="signav" id="crearcuenta">
+                <div class="signav" id="crearcuenta" style="display: none;">
                     <a href="../HTML/registro.html">
                         <button id="botongris">Crear Cuenta</button>
                     </a>
                 </div>
+                <!--Usuario-->
+                <div class="user">
+                    <div class="user-container">
+                        <img class="icono" src="../Assets/Img/SVG/User.svg" alt="User Icon">
+                        <span class="username">Nombre de Usuario</span>
+                    </div>
+                </div>  
             </div>  
         </nav>
         <div id="forosDropdown" class="DContent">
