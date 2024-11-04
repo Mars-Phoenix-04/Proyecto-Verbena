@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html class="desbloquear" lang="es">
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -13,12 +13,13 @@
     <link rel='stylesheet' type='text/css' href='../CSS/parts/botones.css'>
     <link rel='stylesheet' type='text/css' href='../CSS/main.css'>
     <link rel='stylesheet' type='text/css' href='../CSS/parts/user.css'>
+    
     <!-- Hojas de estilo UNICA-->
-    <link rel='stylesheet' type='text/css' href='../CSS/pages/inicio.css'>
+    <link rel='stylesheet' type='text/css' href='../CSS/pages/registro.css'>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Patua+One&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="desbloquear">
     <header id="inicio" class="encabezado">
         <nav id="navbar" class="navegacion">
             <div class="nav-container">
@@ -90,8 +91,88 @@
     </header>
     <!-- Contenido principal de la página -->
     <main>
-        <p>Hola</p>
+        <div id="popup" class="popup oculto ">
+            <div class="cross" onclick="cerrar()">
+            </div>
+            <div class="continue">
+                <h2>Tu cuenta ha sido creada con éxito</h2>
+                <span>Presione el boton para iniciar con la configuracion de su perfil y verificar datos</span><br>
+                <button class="boton" onclick="cerrar()"><a href="perfil.html">CONTINUAR</a></button>
+            </div>
+        </div>
+
+        <div class="registro">
+            <div class="titulo">
+                <h2>¡Hola!</h2>
+                <h3>Crear Cuenta</h3>
+            </div>
+            <div id="form" >
+                <form class="form">
+                    <Label>Nombre de Usuario</Label>
+                    <img class="icon1" src="../Assets/img/svg/icons/ProfilePage/Username.svg" alt="">
+                    <input type="text" placeholder="Escribe tu nombre">
+    
+                    <label for="">Correo electronico</label>
+                    <img class="icon2" src="../Assets/img/svg/icons/ProfilePage/Email.svg" alt="">
+                    <input type="email" placeholder="Escribe tu correo">
+    
+                    <label for="">Contraseña</label>
+                    <img class="icon3" src="../Assets/img/svg/icons/ProfilePage/Password.svg" alt="">
+                    <input type="password" placeholder="Escribe tu contraseña" name="" id="">
+    
+                    <label for=""> Confirmar contraseña</label>
+                    <img class="icon4" src="../Assets/img/svg/icons/ProfilePage/Password.svg" alt="">
+                    <input type="password" placeholder="Repite tu contraseña" name="" id="">
+                </form>
+            </div>
+            <div class="confirm">
+                <img src="../Assets/img/jpg/provisional.png" alt="">
+                <div class="check">
+                    <input type="checkbox" name="" id="" title="Aceptar términos y condiciones">
+                <Label><a href="http://">Aceptar términos y condiciones</a></Label>
+                </div>
+                <button class="boton" onclick="mostrar()" >Registrar</button>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
     </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- Pie de página -->
     <footer class="footer">
         <div class="FGC">
@@ -134,4 +215,5 @@
 </body>
 <!-- Script de JavaScript -->
 <script src="../JS/nav.js"></script>
+<script src="../JS/registro.js"></script>
 </html>
