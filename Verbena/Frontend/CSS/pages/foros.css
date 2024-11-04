@@ -1,0 +1,333 @@
+body {
+    background-color: #cdffcc;
+}
+
+main {
+    height: auto;
+    background-color: transparent;
+}
+
+#foro-publicacion {
+    width: 90%;
+    height: auto;
+    margin: 5% auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    align-content: center;
+    align-items: start;
+    justify-items: end;
+}
+
+.foros {
+    width: 120%;
+    height: auto;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    
+    grid-row-start: 1;
+    grid-row-end: 6;
+
+
+
+}
+
+.categorias {
+    display: flex;
+    flex-direction: column;
+
+    
+
+}
+
+.tema{
+    margin: 0 auto;
+    width: 90%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+
+
+}
+.foro{
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    background-color: #00954e ;
+    box-sizing: border-box;
+    color: white;
+    cursor: pointer;
+    
+}
+.foro h3, .foro span{
+    font-size: 30px;
+}
+.usuario{
+    width: 100%;
+    height: 50px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+}
+
+.usuario img{
+    width: 20%;
+}
+
+
+.oculto {display: none;}
+
+
+.temaAbierto{
+    width: 100%;
+    height: auto;
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding-bottom: 20px;
+
+    position: relative;
+
+}
+.title{
+    background-color: #362040;
+    border-radius: 5px;
+    padding: 1%;
+}
+
+.discusion{
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.user{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    color: #3f8d68;
+}
+.user img{
+    width: 30%;
+    background-color: #e6e6e6;
+    border-radius: 50%;
+}
+
+
+.message{
+    width: 70%;
+    height: 200px;
+    border-radius: 25px;
+    background-color: #22b573;
+    padding: 2%;
+    box-sizing: border-box;
+}
+.fecha, .mensaje{
+    width: 100%;
+}
+
+.commit{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    
+}
+.commit input{
+    width: 80%;
+    margin-right: 3.5%;
+
+    padding: 1%;
+    border-radius: 20px;
+
+    background-color: #68d8a0;
+    border-style: none;
+    box-sizing: border-box;
+}
+.legend{
+    
+    width: 90%;
+    margin: 0 auto;
+    color: black;
+}
+.legend p{
+    font-size: 25px;
+}
+.legend p b{
+    font-size: 27px;
+}
+
+
+
+.bookmark{
+    width: 60px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    right: 5%;
+}
+
+
+
+
+
+
+
+.titulos {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: white;
+    background-color: #00be66;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    padding: 3%;
+    box-sizing: border-box;
+
+}
+
+h2 {
+    font-size: 30px;
+}
+
+.icon {
+    max-width: 5%;
+}
+
+
+
+
+
+
+
+
+
+#publicar {
+    width: 60%;
+    text-align: center;
+}
+
+.titulosP{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    color: white;
+    background-color: #00be66;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    padding: 5%;
+    box-sizing: border-box;
+}
+
+.panelcontrol{
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    background-color: #00733c;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box;
+    overflow: hidden;
+    align-content: space-between;
+    justify-content: space-between;
+    gap: 5%;
+}
+.cat, .tt,  .publi, .cancel{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 65%;
+    color: white;
+    justify-content: space-around;
+    border-style: none;
+}
+.tt{
+    gap: 83.5%;
+}
+.msg {
+    text-align: left;
+    color: white;
+}
+.publi{
+    cursor: pointer;
+    margin: 0 auto;
+    margin-top: 2%;
+    width: 50%;
+    background-color: #00be66 ;
+    font-size: 25px;
+    padding: 2%;
+    border-radius: 20px;
+}
+.cancel{
+    cursor: pointer;
+    margin: 0 auto;
+    margin-top: 2%;
+    width: 50%;
+    background-color: #35203f ;
+    font-size: 25px;
+    padding: 2%;
+    border-radius: 20px;
+}
+label{
+    font-size: 25px;
+}
+textarea{
+    width: 160%;
+}
+
+.mssg{
+    
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    background-color: #00733c;
+    color: white;
+    box-sizing: border-box;
+}
+
+.mssg p{
+    font-size: 50px;
+}
+.mssg p b{
+    font-size: 54px;
+}
+
+
+
+
+
+
+
+
+.send {
+    width: 5%;
+    cursor: pointer;
+   
+    
+
+    box-sizing: border-box;
+    border-style: none;
+    background-color: transparent;
+}
+
+.send img{
+    width: 100%;
+}

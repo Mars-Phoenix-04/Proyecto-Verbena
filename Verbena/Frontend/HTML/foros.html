@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -13,10 +14,13 @@
     <link rel='stylesheet' type='text/css' href='../CSS/parts/botones.css'>
     <link rel='stylesheet' type='text/css' href='../CSS/main.css'>
     <!-- Hojas de estilo UNICA-->
-    <link rel='stylesheet' type='text/css' href='../CSS/pages/inicio.css'>
+    <link rel='stylesheet' type='text/css' href='../CSS/pages/foros.css'>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Patua+One&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Patua+One&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <header id="inicio" class="encabezado">
         <nav id="navbar" class="navegacion">
@@ -25,16 +29,16 @@
                 <div class="logo">
                     <a href="../index.html">
                         <img src="../Assets/Img/png/VerbenaIsologo.png" alt="Logo">
-                    </a>    
+                    </a>
                 </div>
                 <!-- Link Foros con desplegable -->
                 <div id="foros" onclick="toggleDropdown()">
                     Foros
                     <div id="foroflecha" class="flecha">
-                    <span></span>
+                        <span></span>
                     </div>
                 </div>
-                
+
                 <!-- Botones de inicio de sesión y registro -->
                 <div class="loginav" id="iniciosesion">
                     <a href="../HTML/iniciarsesion.html">
@@ -52,36 +56,36 @@
                         <img class="icono" src="../Assets/Img/SVG/icons/User.svg" alt="User Icon">
                         <span class="username">Nombre de Usuario</span>
                     </div>
-                </div>  
-            </div>  
+                </div>
+            </div>
         </nav>
         <div id="forosDropdown" class="DContent">
             <div class="DGrid">
                 <div class="Categoria">
                     <a href="../HTML/foros.html" class="nodec">
-                    <img src="../Assets/Img/jpg/CPNav.jpg" alt="Cuidado de Plantas" class="DDI">
-                    <div class="IT">
-                        <img src="../Assets/Img/svg/icons/CPINav.svg" alt="Ícono Cuidado de Plantas" class="icon">
-                        <p class="ITLink">Cuidado de Plantas</p>
-                    </div>
+                        <img src="../Assets/Img/jpg/CPNav.jpg" alt="Cuidado de Plantas" class="DDI">
+                        <div class="IT">
+                            <img src="../Assets/Img/svg/icons/CPINav.svg" alt="Ícono Cuidado de Plantas" class="icon">
+                            <p class="ITLink">Cuidado de Plantas</p>
+                        </div>
                     </a>
                 </div>
                 <div class="Categoria">
                     <a href="../HTML/foros.html" class="nodec">
-                    <img src="../Assets/Img/jpg/ManNav.jpg" alt="Manualidades" class="DDI">
-                    <div class="IT">
-                        <img src="../Assets/Img/svg/icons/MINav.svg" alt="Ícono Manualidades" class="icon">
-                        <p class="ITLink">Manualidades</p>
-                    </div>
+                        <img src="../Assets/Img/jpg/ManNav.jpg" alt="Manualidades" class="DDI">
+                        <div class="IT">
+                            <img src="../Assets/Img/svg/icons/MINav.svg" alt="Ícono Manualidades" class="icon">
+                            <p class="ITLink">Manualidades</p>
+                        </div>
                     </a>
                 </div>
                 <div class="Categoria">
                     <a href="../HTML/foros.html" class="nodec">
-                    <img src="../Assets/Img/jpg/3RNav.jpg" alt="Las 3R" class="DDI">
-                    <div class="IT">
-                        <img src="../Assets/Img/svg/icons/3RINav.svg" alt="Ícono Las 3R" class="icon">
-                        <p class="ITLink">Las 3R</p>
-                    </div>
+                        <img src="../Assets/Img/jpg/3RNav.jpg" alt="Las 3R" class="DDI">
+                        <div class="IT">
+                            <img src="../Assets/Img/svg/icons/3RINav.svg" alt="Ícono Las 3R" class="icon">
+                            <p class="ITLink">Las 3R</p>
+                        </div>
                     </a>
                 </div>
             </div>
@@ -89,7 +93,187 @@
     </header>
     <!-- Contenido principal de la página -->
     <main>
-        <p>Hola</p>
+        <div id="foro-publicacion">
+            <div class="foros">
+
+                <div id="Cuidado de plantas" class="categorias">
+                    <div id="plantas" class=" titulos">
+                        <img class="icon" src="../Assets/img/svg/icons/CPINav.svg" alt="">
+                        <h2>Cuidado de Plantas</h3>
+                    </div>
+                    <div class="foro">
+                        <div class="tema" onclick="mostrar(this)">
+                            <h3>Tema</h3>
+                            <span>
+                                Mensajes: <br>
+                                (No. de Mensajes)
+                            </span>
+                            <span class="usuario">
+                                <img src="../Assets/img/svg/icons/User.svg">
+                                <p> Nombre Usuario</p>
+                            </span>
+                        </div>
+                        <div class="d oculto">
+                            <img class="bookmark" src="../Assets/img/png/bookmark.png" onclick="cerrar(this)">
+                            <div class="title">
+                                <h3>Tema del Foro Seleccionado</h3>
+                            </div>
+                            <div class="discusion">
+                                <div class="user">
+                                    <img src="../Assets/img/svg/icons/ProfilePage/Username.svg" alt="">
+                                    <h4>Nombre usuario</h4>
+                                </div>
+                                <div class="message">
+                                    <div class="fecha">
+                                        <p id="fecha"><b>Fecha de Publicación: 00/00/2024 </b></p>
+                                    </div>
+                                    <div class="mensaje">
+                                        <p>Mensaje</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="oculto">
+                                <input type="text" placeholder="Responder">
+                                <button class="send"><img src="../Assets/img/png/play-button.png" alt=""></button>
+                            </div>
+                            <div class="legend ">
+                                <p>
+                                    <b>Iniciar sesión</b> o <b>registrate</b> para poder guardar este foro y participar en él.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="Manualidades" class="categorias">
+                    <div id="MM" class=" titulos">
+                        <img class="icon" src="../Assets/img/svg/icons/MINav.svg" alt="">
+                        <h2>Manualidades</h3>
+                    </div>
+                    <div class="foro">
+                        <div class="tema" onclick="mostrar(this)">
+                            <h3>Tema</h3>
+                            <span>
+                                Mensajes: <br>
+                                (No. de Mensajes)
+                            </span>
+                            <span class="usuario">
+                                <img src="../Assets/img/svg/icons/User.svg">
+                                <p> Nombre Usuario</p>
+                            </span>
+                        </div>
+                        <div class="d oculto">
+                            <img class="bookmark" src="../Assets/img/png/bookmark.png" onclick="cerrar(this)">
+                            <div class="title">
+                                <h3>Tema del Foro Seleccionado</h3>
+                            </div>
+                            <div class="discusion">
+                                <div class="user">
+                                    <img src="../Assets/img/svg/icons/ProfilePage/Username.svg" alt="">
+                                    <h4>Nombre usuario</h4>
+                                </div>
+                                <div class="message">
+                                    <div class="fecha">
+                                        <p id="fecha"><b>Fecha de Publicación: 00/00/2024 </b></p>
+                                    </div>
+                                    <div class="mensaje">
+                                        <p>Mensaje</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="commit">
+                                <input type="text" placeholder="Responder">
+                                <button class="send"><img src="../Assets/img/png/play-button.png" alt=""></button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="3R" class="categorias">
+                    <div id="tres" class=" titulos">
+                        <img class="icon" src="../Assets/img/svg/icons/3RINav.svg" alt="">
+                        <h2>Las 3R</h3>
+                    </div>
+                    <div class="foro">
+                        <div class="tema" onclick="mostrar(this)">
+                            <h3>Tema</h3>
+                            <span>
+                                Mensajes: <br>
+                                (No. de Mensajes)
+                            </span>
+                            <span class="usuario">
+                                <img src="../Assets/img/svg/icons/User.svg">
+                                <p> Nombre Usuario</p>
+                            </span>
+                        </div>
+                        <div class="d oculto">
+                            <img class="bookmark" src="../Assets/img/png/bookmark.png" onclick="cerrar(this)">
+                            <div class="title">
+                                <h3>Tema del Foro Seleccionado</h3>
+                            </div>
+                            <div class="discusion">
+                                <div class="user">
+                                    <img src="../Assets/img/svg/icons/ProfilePage/Username.svg" alt="">
+                                    <h4>Nombre usuario</h4>
+                                </div>
+                                <div class="message">
+                                    <div class="fecha">
+                                        <p id="fecha"><b>Fecha de Publicación: 00/00/2024 </b></p>
+                                    </div>
+                                    <div class="mensaje">
+                                        <p>Mensaje</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="commit">
+                                <input type="text" placeholder="Responder">
+                                <button class="send"><img src="../Assets/img/png/play-button.png" alt=""></button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div id="publicar">
+                <div class="titulosP">
+                    <h2>Crear Publicación</h2>
+                </div>
+                <div class="oculto">
+                    <div class="cat">
+                        <label for="opciones">Categoria:</label>
+                        <select id="opciones" name="opciones">
+                            <option value="opcion0">Selecciona una opción</option>
+
+                            <option value="opcion1">Cuidado de Plantas</option>
+                            <option value="opcion2">Manualidades</option>
+                            <option value="opcion3">Las 3R</option>
+                        </select>
+                    </div>
+                    <div class="tt">
+                        <label>Tema: </label> 
+                        <input type="text">
+                    </div>
+                    <div class="msg">
+                        <label>Mensaje: </label>
+                        <textarea id="mensaje" name="mensaje" rows="20" cols="20"
+                            placeholder="Escribe tu mensaje aquí..."></textarea>
+                    </div>
+                    <button class="publi">Publicar</button>
+                    <button class="cancel">Cancelar</button>
+                </div>
+                <div class="mssg ">
+                    <p>
+                        <b>Inicia sesión</b> o <b>registrate</b> para poder publicar un tema y participar en un foro
+                    </p>
+                </div>
+            </div>
+        </div>
     </main>
     <!-- Pie de página -->
     <footer class="footer">
@@ -133,4 +317,6 @@
 </body>
 <!-- Script de JavaScript -->
 <script src="../JS/nav.js"></script>
+<script src="../JS/foros.js"></script>
+
 </html>

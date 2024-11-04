@@ -1,17 +1,30 @@
 /* CLASES PARA MOSTRAR Y BLOQUEAR (SOLO SIRVE PARA EL JAVASCRIPT)*/
-.mostrar {display: block;}
-.oculto {display: none;}
-.bloquear{overflow: hidden;}
-.desbloquear{overflow: auto;}
+.mostrar {
+    display: block;
+}
+
+.oculto {
+    display: none;
+}
+
+.bloquear {
+    overflow: hidden;
+}
+
+.desbloquear {
+    overflow: auto;
+}
+
 /* POPUP */
 .popup {
     position: absolute;
     width: 100vw;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.329);    
+    background-color: rgba(255, 255, 255, 0.329);
     top: 0;
     z-index: 1000;
 }
+
 .continue {
     width: 50%;
     height: auto;
@@ -29,16 +42,20 @@
     background-color: #00BF66;
     color: white;
 }
-.continue h2{
+
+.continue h2 {
     font-size: 50px;
 }
-.continue span{
+
+.continue span {
     font-size: 20px;
 }
-.continue .boton{
+
+.continue .boton {
     padding: 5px;
     font-size: 50px;
 }
+
 /* Formulario */
 .registro {
     background-color: var(--color10);
@@ -54,20 +71,23 @@
     border-top-left-radius: 100px;
     border-bottom-left-radius: 100px;
 }
+
 .titulo {
     grid-column-start: 1;
     grid-column-end: 3;
     text-align: center;
     color: white;
 }
+
 .titulo h2 {
     font-size: 2.5em;
     font-family: var(--estiloT);
 }
+
 .titulo h3 {
     font-size: 1.5em;
     font-family: var(--estilot);
-    font-weight:normal;
+    font-weight: normal;
 }
 
 #form {
@@ -77,6 +97,7 @@
     grid-column-end: 2;
     margin-right: 150px;
 }
+
 .form {
     display: flex;
     position: relative;
@@ -88,10 +109,12 @@
     align-content: flex-start;
     color: white;
 }
-.form label{
+
+.form label {
     font-family: var(--estilot);
     margin-bottom: 2%;
 }
+
 .form input {
     position: relative;
     width: 80%;
@@ -212,14 +235,16 @@
 
     font-size: 20px;
 }
-button a{
+
+button a {
     font-size: 50px;
     color: white;
     text-decoration: none;
 }
+
 .boton {
     cursor: pointer;
-   
+
     background-color: var(--color1);
 
 
