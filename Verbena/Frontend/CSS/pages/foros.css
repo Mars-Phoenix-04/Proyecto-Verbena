@@ -51,6 +51,7 @@ main {
     color: white;
     cursor: pointer;
 }
+
 .foro h3, .nomensajes{
     font-size: 1.5rem;
     font-family: var(--estilot);
