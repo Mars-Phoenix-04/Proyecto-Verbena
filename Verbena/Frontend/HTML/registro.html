@@ -131,7 +131,7 @@
     
                     <label for="">Correo electrónico</label>
                     <div class="WInput">
-                        <input type="email" class="input" placeholder="Escribe tu correo">
+                        <input id="email" type="email" class="input" placeholder="Escribe tu correo">
                         <svg id="Layer_1" class="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1920">
                             <defs>
                               <style>
@@ -147,7 +147,7 @@
     
                     <label for="">Contraseña</label>
                     <div class="WInput">
-                        <input type="password" class="input" placeholder="Escribe tu contraseña">
+                        <input id="password" type="password" class="input" placeholder="Escribe tu contraseña">
                         <svg id="Layer_1" class="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1920">
                             <defs>
                               <style>
@@ -162,7 +162,7 @@
 
                     <label for=""> Confirmar contraseña</label>
                     <div class="WInput">
-                        <input type="password" class="input" placeholder="Repite tu contraseña">
+                        <input id="password2" type="password" class="input" placeholder="Repite tu contraseña">
                         <svg id="Layer_1" class="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1920">
                             <defs>
                               <style>
@@ -180,10 +180,10 @@
             <div class="confirm">
                 <img src="../Assets/img/svg/IForm.svg" alt="Ilustracion">
                 <div class="check">
-                    <input type="checkbox" name="" id="" title="Aceptar términos y condiciones">
+                    <input id="checkbox" type="checkbox" name="" id="" title="Aceptar términos y condiciones">
                 <Label><a href="http://">Aceptar términos y condiciones</a></Label>
                 </div>
-                <button class="boton" onclick="mostrar()" >Registrar</button>
+                <button id="btn-registro" class="boton" onclick="mostrar()" >Registrar</button>
             </div>
         </div>  
     </main>
@@ -230,4 +230,50 @@
 <!-- Script de JavaScript -->
 <script src="../JS/nav.js"></script>
 <script src="../JS/registro.js"></script>
+<script type="module">
+    import { signup } from "../JS/ejemplo.js";
+    
+    function validarCorreo(correo) {
+        const regex = /^[a-zA-Z0-9._-]{2,}@[a-zA-Z]{2,}\.[a-zA-Z]{2,}$/;
+        return regex.test(correo);
+    }
+
+    document.getElementById('btn-registro').addEventListener('click', async (e) => {
+        e.preventDefault();
+        const email = document.getElementById("email");
+        const password = document.getElementById("password").value;
+        const password2 = document.getElementById("password2").value;
+        const checked = document.getElementById("checkbox").checked; // Cambiado a .checked en lugar de .value
+
+        try {
+            if (!validarCorreo(email.value)) {
+                alert("Ingrese una dirección de correo válida");
+                return;
+            }
+            if (password !== password2) {
+                alert("Las contraseñas no coinciden, por favor intente de nuevo");
+                return;
+            }
+            if (password.length < 6) {
+                alert("Ingrese una contraseña de más de 5 caracteres");
+                return;
+            }
+            if (!checked) {
+                alert("Revise los términos y condiciones");
+                return;
+            }
+
+            await signup(email.value, password);
+            
+            alert("Te has registrado correctamente, presiona el botón para redirigirte a tu perfil");
+            mostrar();
+            setTimeout(() => {
+                window.location.href = "../HTML/perfil.html";
+                document.getElementById("form").reset();
+            }, 1000);
+        } catch (error) {
+            console.error("Ocurrió un error en el registro:", error);
+        }
+    });
+</script>
 </html>

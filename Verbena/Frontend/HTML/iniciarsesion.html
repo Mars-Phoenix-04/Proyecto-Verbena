@@ -117,7 +117,7 @@
     
                     <label for="">Correo electrónico</label>
                     <div class="WInput">
-                        <input type="email" class="input" placeholder="Escribe tu correo">
+                        <input id="email" type="email" class="input" placeholder="Escribe tu correo">
                         <svg id="Layer_1" class="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1920">
                             <defs>
                               <style>
@@ -133,7 +133,7 @@
     
                     <label for="">Contraseña</label>
                     <div class="WInput">
-                        <input type="password" class="input" placeholder="Escribe tu contraseña">
+                        <input id="password" type="password" class="input" placeholder="Escribe tu contraseña">
                         <svg id="Layer_1" class="input-icon2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1920">
                             <defs>
                               <style>
@@ -147,23 +147,13 @@
                     </div>
 
                 </form>
-                <button class="boton" onclick="mostrar()" >Iniciar sesión</button>
+                <button id="btn-inicio" class="boton" onclick="mostrar()" >Iniciar sesión</button>
                 <div class="titulo" style="margin-bottom: 3%;">
                     <h3>¿No tienes una cuenta? <a style="font-size: 1rem;" href="registro.html">Regístrate</a></h3>
                 </div>   
             
         </div>  
     </main>
-
-
-
-
-
-
-
-
-
-
     <!-- Pie de página -->
     <footer class="footer">
         <div class="FGC">
@@ -207,4 +197,40 @@
 <!-- Script de JavaScript -->
 <script src="../JS/nav.js"></script>
 <script src="../JS/registro.js"></script>
+<script type="module">
+    import { login } from "../JS/ejemplo.js";
+
+    function validarCorreo(correo) {
+        const regex = /^[a-zA-Z0-9._-]{2,}@[a-zA-Z]{2,}\.[a-zA-Z]{2,}$/;
+        return regex.test(correo);
+    }
+
+    document.getElementById('btn-registro').addEventListener('click', async (e) => {
+        e.preventDefault();
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        try {
+            if (!validarCorreo(email)) {
+                alert("Ingrese una dirección de correo válida");
+                return;
+            }
+            if (!password) {
+                alert("Por favor ingrese una contraseña válida");
+                return;
+            }
+
+            await login(email, password);
+
+            alert("Has iniciado sesión correctamente!");
+
+            setTimeout(() => {
+                window.location.href = "../HTML/perfil.html";
+                document.getElementById("form").reset();
+            }, 1000);
+        } catch (error) {
+            console.error("Error en el inicio de sesión:", error);
+        }
+    });
+</script>
 </html>

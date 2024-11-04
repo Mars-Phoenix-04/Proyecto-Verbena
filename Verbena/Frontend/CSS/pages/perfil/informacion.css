@@ -61,11 +61,12 @@
     grid-column: 2;
     display: flex;
     justify-content: center;
-    width: 50%;
+    width: 100%;
 }
 
 .save-button {
-    padding: 8%;
+    padding: 4%;
+    width: 50%;
     background-color: var(--color1);
     color: #fff;
     border: none;
@@ -73,10 +74,11 @@
     cursor: pointer;
     font-family: var(--estilot);
     font-size: 1.2rem;
-    margin-top: 8%;
+    margin-top: 6%;
     transition: .3s ease-in-out;
 }
 .save-button:hover {
     background-color: var(--color2);
     font-weight: bolder;
+    width: 60%;
 }

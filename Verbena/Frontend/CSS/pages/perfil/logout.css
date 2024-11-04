@@ -24,7 +24,8 @@
     transition: .3s ease-in-out;
 }
 .logout-button:hover {
-    background-color: rgb(165, 0, 0);
+    color: var(--color9);
+    background-color: white;
     box-shadow: 5px 6px 20px rgba(0, 0, 0, 0.53);
     font-weight: bolder;
     width: 40%;
