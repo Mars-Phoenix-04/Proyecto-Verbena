@@ -13,9 +13,11 @@
     <link rel='stylesheet' type='text/css' href='../CSS/parts/botones.css'>
     <link rel='stylesheet' type='text/css' href='../CSS/main.css'>
     <link rel='stylesheet' type='text/css' href='../CSS/parts/user.css'>
-    
     <!-- Hojas de estilo UNICA-->
-    <link rel='stylesheet' type='text/css' href='../CSS/pages/registro.css'>
+    <link rel='stylesheet' type='text/css' href='../CSS/pages/registro/formulario.css'>
+    <link rel='stylesheet' type='text/css' href='../CSS/pages/registro/clasesJS.css'>
+    <link rel='stylesheet' type='text/css' href='../CSS/pages/registro/popup.css'>
+    <link rel='stylesheet' type='text/css' href='../CSS/pages/registro/contenedor.css'>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Patua+One&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
@@ -96,35 +98,85 @@
         <div id="popup" class="popup oculto ">
             <div class="continue">
                 <h2>Tu cuenta ha sido creada con éxito</h2>
-                <span>Presione el boton para iniciar con la configuracion de su perfil y verificar datos</span><br>
-                <button class="boton" onclick="cerrar()"><a href="perfil.html">CONTINUAR</a></button>
+                <span>Presione el botón para iniciar con la configuración de su perfil y verificar sus datos</span><br>
+                <button class="regisboto" onclick="cerrar()"><a href="perfil.html">CONTINUAR</a></button>
             </div>
         </div>
         <!-- Formulario -->
         <div class="registro">
+            <!-- Titulo del formulario -->
             <div class="titulo">
                 <h2>¡Hola!</h2>
                 <h3>Crear tu Cuenta</h3>
             </div>
+            <!-- Formulario Completo -->
             <div id="form" >
+                <!-- CAMPOS DE TEXTO PARA LLENAR -->
                 <form class="form">
                     <Label>Nombre de Usuario</Label>
-                    <img class="icon1" src="../Assets/img/svg/icons/ProfilePage/Username.svg" alt="">
-                    <input type="text" placeholder="Escribe tu nombre">
+                    <div class="WInput">
+                        <input type="text" class="input" placeholder="Escribe tu nombre">
+                        <svg id="Layer_1" class="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1920">
+                            <defs>
+                              <style>
+                                .cls-1 {
+                                  fill: #362040;
+                                }
+                              </style>
+                            </defs>
+                            <path class="cls-1" d="M172.89,1734.12c.04-54.15-1.78-108.38.49-162.44,6.14-145.97,59.28-273.36,158.17-380.76,94.77-102.93,212.19-164.88,350.4-186.95,26.23-4.19,52.73-6.37,79.38-6.35,130.1.07,260.2-.21,390.29.1,132.41.31,251.89,40.58,357.14,120.5,125.42,95.23,202.13,221.2,230.63,376.19,5.56,30.24,8.4,60.86,8.37,91.68-.04,49.35-.01,98.69-.01,148.04H172.89Z"/>
+                            <path class="cls-1" d="M961.18,836.12c-179.8,0-324.59-145.13-325.12-324.36-.53-181.33,149.77-330.77,334.47-325.77,175.48,4.75,320.98,151.77,315.88,334.64-4.88,175.01-149.76,316.74-325.24,315.49h.01Z"/>
+                        </svg>
+                    </div>
     
-                    <label for="">Correo electronico</label>
-                    <img class="icon2" src="../Assets/img/svg/icons/ProfilePage/Email.svg" alt="">
-                    <input type="email" placeholder="Escribe tu correo">
+                    <label for="">Correo electrónico</label>
+                    <div class="WInput">
+                        <input type="email" class="input" placeholder="Escribe tu correo">
+                        <svg id="Layer_1" class="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1920">
+                            <defs>
+                              <style>
+                                .cls-1 {
+                                  fill: #362040;
+                                }
+                              </style>
+                            </defs>
+                            <path class="cls-1" d="M80.72,1478.57v-806.99c2.56,1.1,5.36,1.85,7.64,3.36,237.91,158.6,475.77,317.28,713.65,475.92,103.69,69.15,211.15,69.67,314.36.94,235.11-156.56,470.07-313.34,705.11-470.02,5.02-3.34,10.17-6.48,17.44-11.1v14c0,256.37.08,512.74-.22,769.1-.02,14.15-1.69,28.68-5.14,42.39-19,75.38-82.77,122.48-165.45,122.52-234.05.12-468.1.04-702.15.04s-476.11-.09-714.17.08c-46.63.03-87.61-13.68-121.84-46.11-27.23-25.8-40.77-58.6-49.23-94.13Z"/>
+                            <path class="cls-1" d="M80.72,441.51c2.83-9.8,5.29-19.73,8.54-29.38,22.44-66.63,82.65-109.59,155.67-110.68,33.76-.51,67.53-.1,101.29-.1,440.08,0,880.16.08,1320.24-.11,51.22-.02,95.63,15.28,130.44,53.92,65.62,72.84,53.84,181.73-27.22,236.86-106.87,72.67-214.87,143.67-322.4,215.37-127.98,85.34-255.96,170.7-383.97,256-73.63,49.06-133.17,49.03-206.7.02-225.55-150.35-450.68-301.34-677-450.53-48.28-31.83-87.02-67.98-98.9-126.72,0-14.88,0-29.76,0-44.64Z"/>
+                        </svg>
+                    </div>
     
                     <label for="">Contraseña</label>
-                    <img class="icon3" src="../Assets/img/svg/icons/ProfilePage/Password.svg" alt="">
-                    <input type="password" placeholder="Escribe tu contraseña" name="" id="">
-    
+                    <div class="WInput">
+                        <input type="password" class="input" placeholder="Escribe tu contraseña">
+                        <svg id="Layer_1" class="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1920">
+                            <defs>
+                              <style>
+                                .cls-1 {
+                                  fill: #362040;
+                                }
+                              </style>
+                            </defs>
+                            <path class="cls-1" d="M1456.66,706.28v-101.04c0-274.3-222.36-496.66-496.66-496.66s-496.66,222.36-496.66,496.66v101.04c-129.13,56.36-212.67,183.78-212.85,324.67v425.71c.23,195.83,158.93,354.52,354.75,354.76h709.51c195.83-.23,354.52-158.93,354.76-354.76v-425.71c-.18-140.89-83.72-268.32-212.85-324.67ZM1030.95,1314.76c0,39.19-31.77,70.95-70.95,70.95s-70.95-31.77-70.95-70.95v-141.9c0-39.19,31.77-70.95,70.95-70.95s70.95,31.77,70.95,70.95v141.9ZM1314.76,676.2h-709.51v-70.95c0-195.93,158.83-354.76,354.76-354.76s354.76,158.83,354.76,354.76v70.95Z"/>
+                        </svg>
+                    </div>
+
                     <label for=""> Confirmar contraseña</label>
-                    <img class="icon4" src="../Assets/img/svg/icons/ProfilePage/Password.svg" alt="">
-                    <input type="password" placeholder="Repite tu contraseña" name="" id="">
+                    <div class="WInput">
+                        <input type="password" class="input" placeholder="Repite tu contraseña">
+                        <svg id="Layer_1" class="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1920">
+                            <defs>
+                              <style>
+                                .cls-1 {
+                                  fill: #362040;
+                                }
+                              </style>
+                            </defs>
+                            <path class="cls-1" d="M1456.66,706.28v-101.04c0-274.3-222.36-496.66-496.66-496.66s-496.66,222.36-496.66,496.66v101.04c-129.13,56.36-212.67,183.78-212.85,324.67v425.71c.23,195.83,158.93,354.52,354.75,354.76h709.51c195.83-.23,354.52-158.93,354.76-354.76v-425.71c-.18-140.89-83.72-268.32-212.85-324.67ZM1030.95,1314.76c0,39.19-31.77,70.95-70.95,70.95s-70.95-31.77-70.95-70.95v-141.9c0-39.19,31.77-70.95,70.95-70.95s70.95,31.77,70.95,70.95v141.9ZM1314.76,676.2h-709.51v-70.95c0-195.93,158.83-354.76,354.76-354.76s354.76,158.83,354.76,354.76v70.95Z"/>
+                        </svg>
+                    </div>
                 </form>
             </div>
+            <!-- SECCION DE CONFIRMACION -->
             <div class="confirm">
                 <img src="../Assets/img/svg/IForm.svg" alt="Ilustracion">
                 <div class="check">

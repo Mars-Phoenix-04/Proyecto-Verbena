@@ -1,0 +1,29 @@
+.registro {
+    background-color: var(--color10);
+    width: 60%;
+    margin: 5% auto;
+    padding: 2% 5% 6%;
+
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(1, auto);
+    gap: 5%;
+
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+}
+.titulo {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    text-align: center;
+    color: white;
+}
+.titulo h2 {
+    font-size: 2.5em;
+    font-family: var(--estiloT);
+}
+.titulo h3 {
+    font-size: 1.5em;
+    font-family: var(--estilot);
+    font-weight:normal;
+}
