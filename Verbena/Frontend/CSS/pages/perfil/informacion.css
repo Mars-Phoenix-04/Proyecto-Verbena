@@ -40,11 +40,14 @@
 }
 
 .input-icon {
-    color: #191919;
+    fill: #191919;
     position: absolute;
     width: 7%;
     transform: translateY(2%);
     left: 3%;
+}
+.cls-1 {
+    fill: #191919;
 }
 .edit{
     color: #191919;
