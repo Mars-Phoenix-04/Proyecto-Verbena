@@ -1,0 +1,78 @@
+.profile-info {
+    padding: 5%;
+}
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10%;
+    background-color: var(--color10);
+    border-radius: 50px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+.form-group label{
+    font-family: var(--estilot);
+    color: white;
+    margin-bottom: 2%;
+}
+
+.WInput {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input {
+    padding: 10px;
+    padding-left: 60px;
+    border: 1px solid #ccc;
+    border-radius: 100px;
+    width: 100%;
+    height: 35px;
+}
+
+.input-icon {
+    color: #191919;
+    position: absolute;
+    width: 7%;
+    transform: translateY(2%);
+    left: 3%;
+}
+.edit{
+    color: #191919;
+    position: absolute;
+    width: 7%;
+    transform: translateY(2%);
+    right: 3%;
+}
+
+.button-group {
+    grid-column: 2;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+
+.save-button {
+    padding: 8%;
+    background-color: var(--color1);
+    color: #fff;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    font-family: var(--estiloT);
+    font-size: 1.2rem;
+    margin-top: 8%;
+    transition: .3s ease-in-out;
+}
+.save-button:hover {
+    background-color: var(--color2);
+}
