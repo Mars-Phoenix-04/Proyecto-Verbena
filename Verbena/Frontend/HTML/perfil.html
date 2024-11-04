@@ -14,7 +14,7 @@
     <link rel='stylesheet' type='text/css' href='../CSS/main.css'>
     <link rel='stylesheet' type='text/css' href='../CSS/parts/user.css'>
     <!-- Hojas de estilo UNICA-->
-    <link rel='stylesheet' type='text/css' href='../CSS/pages/inicio.css'>
+    <link rel='stylesheet' type='text/css' href='../CSS/pages/perfil.css'>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Patua+One&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
@@ -89,9 +89,53 @@
         </div>
     </header>
     <!-- Contenido principal de la página -->
-    <main>
-        <p>Hola</p>
-    </main>
+    <div class="profile-container">
+        
+        <div class="profile-header">
+            <div class="profile-icon">
+                <img src="../Assets/img/svg/icons/PFP.svg">
+            </div>
+            <h2>Nombre de la Cuenta</h2>
+        </div>
+
+        <div class="profile-info">
+            <div class="input-group">
+                <label for="username">Nombre de Usuario</label>
+                <input type="text" id="username" placeholder="Nombre de Usuario">
+            </div>
+            <div class="input-group">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" placeholder="Correo electrónico">
+            </div>
+            <div class="input-group">
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" placeholder="Contraseña">
+            </div>
+            <button class="save-button">Guardar Cambios</button>
+        </div>
+        <div class="tabs">
+            <button class="tab active">Publicaciones</button>
+            <button class="tab">Guardados</button>
+        </div>
+        <div class="posts">
+            <div class="post">
+                <h3>Categoría: Cuidado de Plantas</h3>
+                <p>Publicación hecha por el usuario (descripción)</p>
+                <button class="delete-button">🗑️</button>
+            </div>
+            <div class="post">
+                <h3>Categoría: Manualidades</h3>
+                <p>Publicación hecha por el usuario (descripción)</p>
+                <button class="delete-button">🗑️</button>
+            </div>
+            <div class="post">
+                <h3>Categoría: Las 3R</h3>
+                <p>Publicación hecha por el usuario (descripción)</p>
+                <button class="delete-button">🗑️</button>
+            </div>
+        </div>
+        <button class="logout-button">Cerrar la sesión</button>
+    </div>
     <!-- Pie de página -->
     <footer class="footer">
         <div class="FGC">
