@@ -1,0 +1,5 @@
+/* CLASES PARA MOSTRAR Y BLOQUEAR (SOLO SIRVE PARA EL JAVASCRIPT)*/
+.mostrar {display: block;}
+.oculto {display: none;}
+.bloquear{overflow: hidden;}
+.desbloquear{overflow-y: auto; overflow-x: hidden;}
