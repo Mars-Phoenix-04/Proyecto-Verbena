@@ -68,11 +68,12 @@
     border: none;
     border-radius: 100px;
     cursor: pointer;
-    font-family: var(--estiloT);
+    font-family: var(--estilot);
     font-size: 1.2rem;
     margin-top: 8%;
     transition: .3s ease-in-out;
 }
 .save-button:hover {
     background-color: var(--color2);
+    font-weight: bolder;
 }
