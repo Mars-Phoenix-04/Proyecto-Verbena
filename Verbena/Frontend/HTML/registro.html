@@ -20,6 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Patua+One&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body class="desbloquear">
+    <!-- Barra de Navegacion -->
     <header id="inicio" class="encabezado">
         <nav id="navbar" class="navegacion">
             <div class="nav-container">
@@ -91,20 +92,19 @@
     </header>
     <!-- Contenido principal de la página -->
     <main>
+        <!-- POPUP -->
         <div id="popup" class="popup oculto ">
-            <div class="cross" onclick="cerrar()">
-            </div>
             <div class="continue">
                 <h2>Tu cuenta ha sido creada con éxito</h2>
                 <span>Presione el boton para iniciar con la configuracion de su perfil y verificar datos</span><br>
                 <button class="boton" onclick="cerrar()"><a href="perfil.html">CONTINUAR</a></button>
             </div>
         </div>
-
+        <!-- Formulario -->
         <div class="registro">
             <div class="titulo">
                 <h2>¡Hola!</h2>
-                <h3>Crear Cuenta</h3>
+                <h3>Crear tu Cuenta</h3>
             </div>
             <div id="form" >
                 <form class="form">
@@ -126,53 +126,15 @@
                 </form>
             </div>
             <div class="confirm">
-                <img src="../Assets/img/jpg/provisional.png" alt="">
+                <img src="../Assets/img/svg/IForm.svg" alt="Ilustracion">
                 <div class="check">
                     <input type="checkbox" name="" id="" title="Aceptar términos y condiciones">
                 <Label><a href="http://">Aceptar términos y condiciones</a></Label>
                 </div>
                 <button class="boton" onclick="mostrar()" >Registrar</button>
             </div>
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
+        </div>  
     </main>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <!-- Pie de página -->
     <footer class="footer">
         <div class="FGC">
