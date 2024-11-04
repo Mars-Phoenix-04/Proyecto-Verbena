@@ -1,0 +1,59 @@
+
+/* TEMAS DESTACADOS, COLUMNAS */
+.Testacados{
+    padding: 5% 5% 2%;
+    text-align: center;
+}
+.TColumnas{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10%;
+    margin: 5% 0%;
+}
+.TD{
+    background-color: var(--color9);
+    transition: .5s ease;
+}
+.TD:hover{
+    background-color: var(--color1);
+    border-radius: 50px;
+}
+.TD:hover img {
+    border-radius: 50px;
+    filter: grayscale(0%);
+    transition: .5s ease;
+}
+.TD:nth-child(1) {
+    grid-column: 1; 
+}
+.TD:nth-child(2) {
+    grid-column: 2; 
+}
+.TD:nth-child(3) {
+    grid-column: 3; 
+}
+.TD img{
+    max-width: 100%;
+    filter: grayscale(100%);
+}
+.Description{
+    padding: 0% 0% 10% 0%;
+}
+/*TEXTOS DE TESTACADOS*/
+.Testacados h1{
+    color: var(--color1);
+    font-family: var(--estiloT);
+    font-size: 3em;
+}
+.Testacados h2{
+    color: var(--CNTexto);
+    font-family: var(--estiloT);
+    font-size: 1.5em;
+    margin: 8% 0%;
+    padding: 5%;
+}
+.Testacados p{
+    color: var(--CNTexto);
+    font-family: var(--estilot);
+    font-size: 1.2em;
+}

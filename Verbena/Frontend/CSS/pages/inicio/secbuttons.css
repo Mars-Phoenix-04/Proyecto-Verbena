@@ -1,0 +1,56 @@
+/* BOTONES DE LOS FOROS */
+.SeccionBotones {
+    width: 100vw;
+    background-color: var(--color1);
+    background: linear-gradient(0deg, rgba(0,115,61,1) 0%, rgba(0,183,97,1) 100%); 
+    padding: 2% 0%;
+    border-radius: 10%;
+    margin-top: -4%;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    color: var(--CNTexto);
+    font-family: var(--estiloT);
+}
+/*TEXTOS DE SECBOTONES*/
+.SeccionBotones h1 {
+    font-size: 3.5em;
+}
+.SeccionBotones h2 {
+    font-size: 2em;
+}
+.SeccionBotones p {
+    font-family: var(--estilot);
+    font-size: 1.4em;
+    margin-top: 1%;
+}
+/*BOTONES Y SU ESTRUCTURA*/
+.Botones {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    margin: 3% 0%;
+}
+.Boton {
+    text-align: center;
+}
+.Boton:nth-child(1) {
+    grid-column: 1; 
+}
+.Boton:nth-child(2) {
+    grid-column: 2; 
+}
+.Boton:nth-child(3) {
+    grid-column: 3; 
+}
+.Boton img {
+    max-width: 40%;
+    margin-bottom: 4%;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+.Boton img:hover{
+    transform: scale(1.2); 
+    background-color: var(--color4);
+    box-shadow: 5px 6px 20px rgba(0,0,0,0.4);
+}

@@ -14,11 +14,15 @@
     <link rel='stylesheet' type='text/css' href='CSS/parts/botones.css'>
     <link rel='stylesheet' type='text/css' href='CSS/main.css'>
     <!-- Hojas de estilo UNICA-->
-    <link rel='stylesheet' type='text/css' href='CSS/pages/inicio.css'>
+    <link rel='stylesheet' type='text/css' href='CSS/pages/inicio/header.css'>
+    <link rel='stylesheet' type='text/css' href='CSS/pages/inicio/popup.css'>
+    <link rel='stylesheet' type='text/css' href='CSS/pages/inicio/secbuttons.css'>
+    <link rel='stylesheet' type='text/css' href='CSS/pages/inicio/destacados.css'>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Patua+One&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Barra de Navegacion || Header -->
     <header id="inicio" class="encabezado">
         <nav id="navbar" class="navegacion">
             <div class="nav-container">
@@ -89,10 +93,75 @@
             </div>
         </div>
     </header>
-    <!-- Contenido principal de la página -->
-    <main>
-        <p>Hola</p>
-    </main>
+    <!-- Encabezado -->
+    <div class="VEncabezado">
+            <h1 class="VETexto">
+            "Cuidar una planta es cuidar una vida"
+            </h1>
+    </div>
+    <!-- Botones -->
+    <div class="SeccionBotones">
+            <h1>¡Bienvenido a Verbena!</h1>
+            <p>Explora los distintos foros que tenemos para ti</p>
+            <div class="Botones">
+                <div class="Boton">
+                    <a href="HTML/foros.html" class="nodec">
+                    <img src="Assets/img/svg/icons/Buttons/Plantas.svg" alt="Plantas">
+                    </a>
+                    <h2>Plantas</h2>
+                </div>
+                <div class="Boton">
+                    <a href="HTML/foros.html" class="nodec">
+                    <img src="Assets/img/svg/icons/Buttons/Manualidades.svg" alt="Manualidades">
+                    </a>
+                    <h2>Manualidades</h2>
+                </div>
+                <div class="Boton">
+                    <a href="HTML/foros.html" class="nodec">
+                    <img src="Assets/img/svg/icons/Buttons/3R.svg" alt="Las 3R">
+                    </a>
+                    <h2>Las 3R</h2>
+                </div>
+            </div>
+    </div>
+    <!-- Destacados -->
+     <div class="Testacados">
+        <h1>Temas Destacados</h1>
+        <div class="TColumnas">
+            <div class="TD">
+                <a href="HTML/foros.html" class="nodec">
+                <img src="Assets/img/jpg/PlantasDestacados.jpg">
+                <h2>Tema Destacado #1</h2>
+                <div class="Description">
+                <p>Breve Descripcion</p>
+                </div>
+                <h2>Categoria: Plantas</h2>
+                </a>
+            </div>
+            
+            <div class="TD">
+                <a href="HTML/foros.html" class="nodec">
+                <img src="Assets/img/jpg/ManualidadesDestacados.jpg">
+                <h2>Tema Destacado #2</h2>
+                <div class="Description">
+                    <p>Breve Descripcion</p>
+                    </div>
+                <h2>Categoria: Manualidades</h2>
+                </a>
+            </div>
+            
+            <div class="TD">
+                <a href="HTML/foros.html" class="nodec">
+                <img src="Assets/img/jpg/3RDestacados.jpg">
+                <h2>Tema Destacado #3</h2>
+                <div class="Description">
+                <p>Breve Descripcion</p>
+                </div>
+                <h2>Categoria: 3R</h2>
+                </a>
+            </div>
+        </div>
+     </div>
     <!-- Pie de página -->
     <footer class="footer">
         <div class="FGC">
@@ -132,7 +201,33 @@
             </div>
         </div>
     </footer>
+    <!-- Pop-Up -->
+    <div id="PBienvenida" class="PBFondo">
+        <div class="popup">
+            <img src="Assets/Img/svg/VerbenaIsologoNegativo.svg" alt="Verbena Logo">
+            <img class="close" src="Assets/img/svg/icons/Cerrar.svg" alt="X" onclick="closePopup()">
+            <h2>¡Bienvenido, bienvenida a Verbena!</h2>
+            <div class="MensajePop">
+            <p>
+            Verbena es un conjunto de foros en línea que busca crear conciencia 
+            ambiental en nuestra comunidad.
+            <br><br>
+            Te ofrecemos 3 categorías dentro de las cuales puedes interactuar con
+            distintos usuarios y compartir tus conocimientos y experiencias
+            relacionadas a las plantas, el reciclaje y las manualidades.
+            <br><br>
+            Podrás crear conversaciones con temas relacionados al pensamiento verde y
+            responder a los mensajes de nuestras plantitas.
+            </p>
+            </div>
+            <h2>¿Qué esperas?</h2>
+            <div class="BRegistro">
+                <button class="registro" onclick="register()">REGISTRARME</button>    
+            </div>
+        </div>
+    </div>
 </body>
 <!-- Script de JavaScript -->
 <script src="JS/nav.js"></script>
+<script src="JS/IPopup.js"></script>
 </html>

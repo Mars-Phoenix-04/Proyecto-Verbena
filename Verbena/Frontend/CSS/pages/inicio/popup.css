@@ -1,0 +1,72 @@
+.PBFondo{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 5;
+    opacity: 0;
+    transition: 1.5s ease;
+}
+.fade-in {animation: fadeIn 1.5s forwards;}
+@keyframes fadeIn {to { opacity: 1; }}
+.popup{
+    position: relative;
+    width: 35%; 
+    margin: 2% auto;
+    padding: 1.5%;
+    background: var(--color1);
+    border-radius: 50px;
+    align-content: center;
+    text-align: center;
+    color: var(--CNTexto);
+} 
+ /*CONTENIDO DEL POPUP*/
+.MensajePop{
+    padding: 2%;
+    margin: 2% 0%;
+}
+.popup img{
+    max-width: 45%;
+}
+.popup h2{
+    font-size: 1.5em;
+    font-family: var(--estiloT);
+    margin-top: 2%;
+}
+.popup p{
+    font-size: 1em;
+    font-family: var(--estilot);
+}
+.close{
+    width: 10%;
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    cursor: pointer;
+    transition: .5s ease;
+}
+.close:hover{
+    rotate: 90deg;
+}
+ /* BOTON DE REGISTRO */
+.BRegistro{
+    padding: 5%;
+}
+.registro {
+    background: var(--color4); 
+    color: white;
+    border: none;
+    padding: 4% 15%;
+
+    font-size: 1.7em;
+    font-family: var(--estiloT);
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.registro:hover {
+    background: var(--color5);
+}
