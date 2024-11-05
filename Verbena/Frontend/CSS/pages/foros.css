@@ -32,6 +32,20 @@ main {
     display: flex;
     flex-direction: column;
 }
+.categorias .foro:nth-child(even) {
+    background-color: var(--color2);
+    transition:  0.3s ease-in-out;  
+}
+.categorias .foro:nth-child(even):hover {
+    background-color: var(--color4); 
+}
+.categorias .foro:nth-child(odd) {
+    background-color: var(--color3); 
+    transition:  0.3s ease-in-out; 
+}
+.categorias .foro:nth-child(odd):hover {
+    background-color: var(--color10); 
+}
 .tema{
     margin: 0 auto;
     width: 90%;
@@ -46,12 +60,10 @@ main {
     width: 100%;
     height: auto;
     padding: 2%;
-    background-color: #00954e ;
     box-sizing: border-box;
     color: white;
     cursor: pointer;
 }
-
 .foro h3, .nomensajes{
     font-size: 1.5rem;
     font-family: var(--estilot);
@@ -211,7 +223,7 @@ h2 {
     background-color: #00be66;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
-    padding: 5%;
+    padding: 7.5%;
     box-sizing: border-box;
 }
 
