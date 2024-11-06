@@ -196,9 +196,10 @@
         </div>
         <!-- Publicaciones & Guardados -->
         <div class="tabs">
-            <button class="tab active">Publicaciones</button>
-            <button class="tab">Guardados</button>
+            <button class="tab active" onclick="toggleTab(0)">Publicaciones</button>
+            <button class="tab" onclick="toggleTab(1)">Guardados</button>
         </div>
+        <!-- Publicaciones -->
         <div class="posts">
             <div class="post" id="post1">
                     <div class="text-content">
@@ -252,6 +253,25 @@
                 </svg>
             </div> 
         </div>
+        <!-- Foros Guardados -->
+        <div class="guardados">
+            <div class="save">
+                    <div class="text-content">
+                        <h3>Categoría: Cuidado de Plantas</h3>
+                        <p>Publicación hecha por otro usuario (descripción)</p>
+                    </div>
+                    <svg id="Layer_1" class="guard-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1920">
+                        <defs>
+                          <style>
+                            .cls-2 {
+                              fill: #fff;
+                            }
+                          </style>
+                        </defs>
+                        <path class="cls-2" d="M427.59,76.11c357.24,0,714.47,0,1071.71,0,.79.78,1.45,2.03,2.37,2.27,84.3,21.64,125.44,74.33,125.45,160.98.02,496.12.01,992.23-.02,1488.35,0,9.76.19,19.56-.64,29.27-6.35,74.16-70.17,105.67-132.38,65.33-7.67-4.98-14.81-10.87-21.79-16.81-148.21-126.15-296.32-252.43-444.56-378.56-39.66-33.74-85.33-33.74-124.88-.19-111.2,94.34-222.29,188.82-333.49,283.16-42.03,35.65-83.13,72.52-126.64,106.28-62.43,48.46-131.51,21.86-144.88-54.21-1.38-7.85-1.47-16.01-1.47-24.02-.07-502.43-.12-1004.86,0-1507.3.02-66.85,40.82-122.8,104.18-145.25,8.98-3.18,19.06-3.22,27.03-9.3Z"/>
+                    </svg>
+            </div>         
+        </div>
         <div class="div"></div>
         <div class="Cerrar">
             <button class="logout-button" onclick="logout()">Cerrar Sesión</button>
@@ -302,4 +322,5 @@
 <script src="../JS/perfil/logout.js"></script>
 <script src="../JS/perfil/perfil.js"></script>
 <script src="../JS/perfil/borrar.js"></script>
+<script src="../JS/perfil/tabs.js"></script>
 </html>

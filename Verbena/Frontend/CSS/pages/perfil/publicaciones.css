@@ -23,6 +23,11 @@
 /* Posts Section */
 .posts {
     padding: 2% 5%;
+    display: none; /* Ocultamos por defecto */
+}
+
+.posts.active {
+    display: block; /* Mostramos cuando la clase active está presente */
 }
 
 .post {
@@ -36,6 +41,7 @@
     margin-bottom: 5%;
     transition: .5s ease; 
 }
+
 .text-content {
     display: flex;
     flex-direction: column;
@@ -66,9 +72,11 @@
     color: white;
     transition: transform 0.2s ease; 
 }
+
 .delete-button:hover {
     animation: wiggle .8s ease-in-out; 
 }
+
 @keyframes wiggle {
     0% {
         transform: rotate(0deg);
@@ -84,4 +92,66 @@
     }
 }
 
+/* Guardados Section */
+.guardados {
+    padding: 2% 5%;
+    display: none;
+}
 
+.guardados.active {
+    display: block; 
+}
+
+.save {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    position: relative;
+    background-color: var(--color12);
+    padding: 5%;
+    border-radius: 25px;
+    margin-bottom: 5%;
+    transition: .5s ease; 
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.save h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-family: var(--estiloT);
+    color: white;
+}
+
+.save p {
+    font-size: 1rem;
+    color: white;
+    font-family: var(--estilot);
+}
+.guard-button{
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 8%;
+    color: white;
+    transition: transform 0.2s ease; 
+}
+.guard-button:hover {
+    animation: updownfunkyouup 1s ease-in-out infinite; 
+}
+
+@keyframes updownfunkyouup {
+    0% {
+        transform: translateY(0%);
+    }
+    50% {
+        transform: translateY(20%);
+    }
+}
