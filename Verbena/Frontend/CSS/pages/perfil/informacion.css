@@ -37,8 +37,14 @@
     border-radius: 100px;
     width: 100%;
     height: 35px;
+    cursor:default;
 }
-
+input:focus, input:active {
+    outline: none;  
+    box-shadow: none; 
+    border: none;
+    border: 1px solid #ccc;
+}
 .input-icon {
     fill: #191919;
     position: absolute;
@@ -55,8 +61,26 @@
     width: 7%;
     transform: translateY(2%);
     right: 3%;
+    cursor: pointer;
 }
-
+.edit:hover{
+    animation: wiggle .8s ease-in-out;
+    fill: var(--color1); 
+}
+@keyframes wiggle {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(35deg);
+    }
+    50% {
+        transform: rotate(-35deg);
+    }
+    75% {
+        transform: rotate(35deg);
+    }
+}
 .button-group {
     grid-column: 2;
     display: flex;
