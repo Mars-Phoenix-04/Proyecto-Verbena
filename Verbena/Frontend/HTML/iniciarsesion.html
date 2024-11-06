@@ -14,7 +14,9 @@
     <link rel='stylesheet' type='text/css' href='../CSS/main.css'>
     <link rel='stylesheet' type='text/css' href='../CSS/parts/user.css'>
     <!-- Hojas de estilo UNICA-->
-    <link rel='stylesheet' type='text/css' href='../CSS/pages/iniciarsesion.css'>
+    <link rel='stylesheet' type='text/css' href='../CSS/pages/login/iniciarsesion.css'>
+    <link rel='stylesheet' type='text/css' href='../CSS/pages/login/clasesJS.css'>
+    <link rel='stylesheet' type='text/css' href='../CSS/pages/login/popup.css'>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Patua+One&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
@@ -88,15 +90,6 @@
             </div>
         </div>
     </header>
-
-
-
-
-
-
-
-
-
     <!-- Contenido principal de la página -->
      <main>
         <!-- POPUP -->
@@ -104,7 +97,7 @@
             <div class="continue">
                 <h2>¡Bienvenido, bienvenida de vuelta!</h2>
                 <span>Presione el botón para ser a tu perfil y continúa <b>plantando semillas de conocimiento para tu comunidad :D</b></span><br>
-                <button class="boton" onclick="cerrar()"><a href="perfil.html">CONTINUAR</a></button>
+                <button class="regisboto" onclick="cerrar()"><a href="perfil.html">CONTINUAR</a></button>
             </div>
         </div>
         <!-- Formulario -->
@@ -124,7 +117,7 @@
     
                     <label for="">Correo electrónico</label>
                     <div class="WInput">
-                        <input type="email" class="input" placeholder="Escribe tu correo">
+                        <input id="email" type="email" class="input" placeholder="Escribe tu correo">
                         <svg id="Layer_1" class="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1920">
                             <defs>
                               <style>
@@ -140,7 +133,7 @@
     
                     <label for="">Contraseña</label>
                     <div class="WInput">
-                        <input type="password" class="input" placeholder="Escribe tu contraseña">
+                        <input id="password" type="password" class="input" placeholder="Escribe tu contraseña">
                         <svg id="Layer_1" class="input-icon2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1920">
                             <defs>
                               <style>
@@ -154,23 +147,19 @@
                     </div>
 
                 </form>
-                <button class="boton" onclick="mostrar()" >Iniciar sesión</button>
-                <div class="titulo">
-                    <h3>¿No tienes una cuenta? <a href="registro.html">Registrate</a></h3>
+                <button id="btn-inicio" class="boton" onclick="mostrar()" >Iniciar sesión</button>
+                <div class="titulo" style="margin-bottom: 3%;">
+                    <h3>
+                        ¿No tienes una cuenta? 
+                    <a class="registralink" 
+                    href="registro.html">
+                        Regístrate
+                    </a>
+                    </h3>
                 </div>   
             
         </div>  
     </main>
-
-
-
-
-
-
-
-
-
-
     <!-- Pie de página -->
     <footer class="footer">
         <div class="FGC">
@@ -214,4 +203,40 @@
 <!-- Script de JavaScript -->
 <script src="../JS/nav.js"></script>
 <script src="../JS/registro.js"></script>
+<script type="module">
+    import { login } from "../JS/ejemplo.js";
+
+    function validarCorreo(correo) {
+        const regex = /^[a-zA-Z0-9._-]{2,}@[a-zA-Z]{2,}\.[a-zA-Z]{2,}$/;
+        return regex.test(correo);
+    }
+
+    document.getElementById('btn-registro').addEventListener('click', async (e) => {
+        e.preventDefault();
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        try {
+            if (!validarCorreo(email)) {
+                alert("Ingrese una dirección de correo válida");
+                return;
+            }
+            if (!password) {
+                alert("Por favor ingrese una contraseña válida");
+                return;
+            }
+
+            await login(email, password);
+
+            alert("Has iniciado sesión correctamente!");
+
+            setTimeout(() => {
+                window.location.href = "../HTML/perfil.html";
+                document.getElementById("form").reset();
+            }, 1000);
+        } catch (error) {
+            console.error("Error en el inicio de sesión:", error);
+        }
+    });
+</script>
 </html>

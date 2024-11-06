@@ -12,4 +12,5 @@ function cerrar() {
     document.querySelector('html').classList.add('desbloquear');
     document.querySelector('#popup').classList.remove('mostrar');
     document.querySelector('#popup').classList.add('oculto');
+    window.location.href = "../HTML/perfil.html"; 
 }

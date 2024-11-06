@@ -1,12 +1,10 @@
 body {
     background-color: #cdffcc;
-}
-
+} 
 main {
     height: auto;
     background-color: transparent;
 }
-
 #foro-publicacion {
     width: 90%;
     height: auto;
@@ -18,7 +16,6 @@ main {
     align-items: start;
     justify-items: end;
 }
-
 .foros {
     width: 120%;
     height: auto;
@@ -30,43 +27,51 @@ main {
     
     grid-row-start: 1;
     grid-row-end: 6;
-
-
-
 }
-
 .categorias {
     display: flex;
     flex-direction: column;
-
-    
-
 }
-
+.categorias .foro:nth-child(even) {
+    background-color: var(--color2);
+    transition:  0.3s ease-in-out;  
+}
+.categorias .foro:nth-child(even):hover {
+    background-color: var(--color4); 
+}
+.categorias .foro:nth-child(odd) {
+    background-color: var(--color3); 
+    transition:  0.3s ease-in-out; 
+}
+.categorias .foro:nth-child(odd):hover {
+    background-color: var(--color10); 
+}
 .tema{
     margin: 0 auto;
     width: 90%;
     height: auto;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     align-content: center;
     justify-items: center;
     align-items: center;
-
-
 }
 .foro{
     width: 100%;
     height: auto;
-    padding: 10px;
-    background-color: #00954e ;
+    padding: 2%;
     box-sizing: border-box;
     color: white;
     cursor: pointer;
-    
 }
-.foro h3, .foro span{
-    font-size: 30px;
+.foro h3, .nomensajes{
+    font-size: 1.5rem;
+    font-family: var(--estilot);
+    text-align: center;
+}
+.nomensajes{
+    grid-column: 2/4;
+    font-size: 1rem;
 }
 .usuario{
     width: 100%;
@@ -77,7 +82,8 @@ main {
     align-items: center;
     justify-content: center;
     gap: 10px;
-
+    grid-column: 4/6;
+    font-family: var(--estilot);
 }
 
 .usuario img{
@@ -182,13 +188,6 @@ main {
     top: 0;
     right: 5%;
 }
-
-
-
-
-
-
-
 .titulos {
     display: flex;
     align-items: center;
@@ -197,27 +196,19 @@ main {
     background-color: #00be66;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
-    padding: 3%;
+    padding: 3% 5%;
     box-sizing: border-box;
 
 }
 
 h2 {
-    font-size: 30px;
+    font-size: 2rem;
+    font-family: var(--estiloT);
 }
 
 .icon {
-    max-width: 5%;
+    max-width: 8%;
 }
-
-
-
-
-
-
-
-
-
 #publicar {
     width: 60%;
     text-align: center;
@@ -232,7 +223,7 @@ h2 {
     background-color: #00be66;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
-    padding: 5%;
+    padding: 7.5%;
     box-sizing: border-box;
 }
 
@@ -292,42 +283,34 @@ label{
 textarea{
     width: 160%;
 }
-
 .mssg{
     
     width: 100%;
     height: auto;
-    padding: 20px;
+    padding: 5%;
     background-color: #00733c;
     color: white;
     box-sizing: border-box;
+    padding: 30% 5%;
+    border-radius: 0px 0px 50px 50px;
 }
-
 .mssg p{
-    font-size: 50px;
+    font-size: 1.5rem;
+    font-family: var(--estilot);
+    padding: 5%;
 }
 .mssg p b{
-    font-size: 54px;
+    font-size: 2rem;
+    padding: 0%;
+    font-family: var(--estilot);
 }
-
-
-
-
-
-
-
-
 .send {
     width: 5%;
     cursor: pointer;
-   
-    
-
     box-sizing: border-box;
     border-style: none;
     background-color: transparent;
 }
-
 .send img{
     width: 100%;
 }
