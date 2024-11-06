@@ -1,6 +1,6 @@
 /* Formulario */
 .registro {
-    background-image: url(../../Assets/img/jpg/Verbena1.jpg);
+    background-image: url(../../../Assets/img/jpg/Verbena1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     width: 75%;
@@ -180,9 +180,9 @@ a {
     cursor: pointer;
 
     background-color: var(--color1);
-    padding: 2%;
+    padding: 3%;
 
-    font-size: 20px;
+    font-size: 2rem;
     font-family: var(--estilot);
     text-align: center;
     color: var(--CNTexto);
@@ -197,4 +197,25 @@ a {
     border: solid var(--color2);
     font-weight: bolder;
     color: var(--CNTexto);
+}
+
+.registralink{
+    font-size: 1.5rem; 
+    font-weight: bolder;
+    position: relative;
+    text-decoration: none;
+}
+.registralink::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px; 
+    width: 0;
+    height: 3px; 
+    background-color: white;
+    transition: width 0.3s ease-in-out; 
+}
+
+.registralink:hover::after {
+    width: 100%;
 }
