@@ -116,7 +116,7 @@ main {
 }
 
 .discusion{
-    padding: 10% 5%;
+    padding:5%;
     display: flex;
     align-items: center;
     box-sizing: border-box;
@@ -308,7 +308,7 @@ h2 {
     bottom: -1px; 
     width: 0;
     height: 3px; 
-    background-color: var(--color1);
+    background-color: black;
     transition: width 0.3s ease-in-out; 
 }
 .linkcuentaB:hover::after {
