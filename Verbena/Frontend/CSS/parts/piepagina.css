@@ -19,7 +19,7 @@
     gap: 5%;
     grid-column: 2 / 4;
 }
-.info .foros,
+.info .forosfooter,
 .info .legal{
     flex: 2;
 }
