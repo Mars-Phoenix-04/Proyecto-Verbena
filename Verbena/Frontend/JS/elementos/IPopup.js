@@ -1,3 +1,4 @@
+//ESTO ES PARA POPUP DE LA PAGINA DE INICIO
 function register() {
     window.location.href = "HTML/registro.html";
 }

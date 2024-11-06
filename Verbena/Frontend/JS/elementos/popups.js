@@ -5,8 +5,6 @@ function mostrar() {
     document.querySelector('#popup').classList.add('mostrar');
 }
 
-
-
 function cerrar() {
     document.querySelector('html').classList.remove('bloquear');
     document.querySelector('html').classList.add('desbloquear');

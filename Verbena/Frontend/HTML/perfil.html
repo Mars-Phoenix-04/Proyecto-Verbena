@@ -297,37 +297,9 @@
         </div>
     </footer>
 </body>
-<!-- Script de JavaScript -->
-<script src="../JS/nav.js"></script>
-<script src="../JS/logout.js"></script>
-<script src="../JS/perfil.js"></script>
-<!-- Script para cambiar el color de fondo de la publicacion cuando se hace hover en el icono de borrar-->
-<script>
-    const posts = document.querySelectorAll('.post');
-    const deleteButtons = document.querySelectorAll('.delete-button');
-
-    deleteButtons.forEach((button, index) => {
-        const post = posts[index]; 
-        button.addEventListener('mouseenter', () => {
-            post.style.backgroundColor = 'var(--color5)'; 
-        });
-
-        button.addEventListener('mouseleave', () => {
-            post.style.backgroundColor = 'var(--color1)'; 
-        });
-    });
-</script>
-<!-- Script temporal para borrar publicacion-->
-<script>
-    function borrarpost(postId) {
-        const confirmarborro = confirm("¿Estás seguro de que deseas eliminar esta publicación? No hay vuelta atrás, una vez eliminado dejará de existir.");
-        if (confirmarborro) {
-            const post = document.getElementById(postId);
-            if (post) {
-                post.remove(); 
-                alert("¡Publicación eliminada! Esperamos sigas comentando y participando:)");
-            }
-        }
-    }
-</script>
+<!-- Scripts -->
+<script src="../JS/elementos/nav.js"></script>
+<script src="../JS/perfil/logout.js"></script>
+<script src="../JS/perfil/perfil.js"></script>
+<script src="../JS/perfil/borrar.js"></script>
 </html>
