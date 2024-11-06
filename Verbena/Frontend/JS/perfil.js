@@ -53,7 +53,7 @@ function saveChanges(event) {
     }
     //Facil y sencillo, revisa si hubo cambios y si no hay lo regresa y todo sigue igual
     if (!usernameChanged && !emailChanged && !passwordChanged) {
-        alert('No se han realizado cambios. Haga clic en el icono de lápiz para realizarlos y luego presione este botón para guardarlos.');
+        alert('No se han realizado cambios. Haga clic en el icono de lápiz para realizarlos y luego presione este botón para guardar.');
         return;
     }
     //Aqui la verdad no es como que los guarde en la base de datos (porque pues falta eso)
