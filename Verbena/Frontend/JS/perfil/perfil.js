@@ -75,3 +75,26 @@ function saveChanges(event) {
         location.reload();
     }
 }
+
+//Funcion para mostrar los datos registrados
+function mostrar() {
+    // Obtener los valores de los campos de registro
+    const nombreUsuario = document.querySelector('.registro .WInput input[type="text"]').value;
+    const correoElectronico = document.getElementById('email').value;
+
+    // Verificar que los campos no estén vacíos
+    if (nombreUsuario && correoElectronico) {
+        // Asignar los valores al perfil
+        document.getElementById('.profile-info #username').textContent = nombreUsuario;
+        document.querySelector('.profile-header h2').textContent = nombreUsuario;
+        document.querySelector('.profile-info #email').value = correoElectronico;
+
+        // Confirmación de registro
+        document.querySelector('html').classList.remove('desbloquear');
+        document.querySelector('html').classList.add('bloquear');
+        document.querySelector('#popup').classList.remove('oculto');
+        document.querySelector('#popup').classList.add('mostrar');
+    } else {
+        alert("Por favor, completa todos los campos.");
+    }
+}
