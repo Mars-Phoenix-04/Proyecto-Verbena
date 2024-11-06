@@ -14,6 +14,18 @@ button.addEventListener('mouseleave', () => {
 post.style.backgroundColor = 'var(--color1)'; 
 });
 });
+//lo mismo pero para los guardados
+desaves.forEach((button, index) => {
+const save = saves[index]; 
+    
+button.addEventListener('mouseenter', () => {
+save.style.backgroundColor = 'var(--color13)'; 
+});
+button.addEventListener('mouseleave', () => {
+save.style.backgroundColor = 'var(--color12)'; 
+});
+});
+
 
 //Funcion para borrar nuestras publicaciones, aun falta vincular con la base de datos
 function borrarpost(postId) {
@@ -22,18 +34,18 @@ function borrarpost(postId) {
         const post = document.getElementById(postId);
         if (post) {
             post.remove(); 
-            alert("¡Publicación eliminada! Esperamos sigas comentando y participando:)");
+            alert("¡Publicación eliminada! Esperamos sigas comentando y participando :)");
         }
     }
 }
 //Funcion para desguardad publicaciones, aun falta vincular con la base de datos
 function desguardar(saveId) {
-    const confirmarborro2 = confirm("¿Estás seguro de que deseas eliminar esta publicación? No hay vuelta atrás, una vez eliminada dejará de existir.");
+    const confirmarborro2 = confirm("¿Deseas quitar esta publicación? Una vez hecho, ya no podrás recuperarlo y tendrás que buscarlo y guardarlo de nuevo.");
         if (confirmarborro2) {
-        const post = document.getElementById(postId);
-        if (post) {
-            post.remove(); 
-            alert("¡Publicación eliminada! Esperamos sigas comentando y participando:)");
+        const save = document.getElementById(saveId);
+        if (save) {
+            save.remove(); 
+            alert("¡La publicación ha sido eliminada de tu lista de guardados! Continúa explorando los foros y busca los más importantes para ti :) ");
         }
     }
 }
