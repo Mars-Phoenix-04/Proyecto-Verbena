@@ -257,20 +257,21 @@ h2 {
     gap: 5%;
 }
 .cat, .tt,  .publi, .cancel{
-    margin-top: 10px;
+    margin-top: 15px;
     display: flex;
     flex-direction: row;
-    gap: 65%;
+    gap: 20%;
     color: white;
     justify-content: space-around;
     border-style: none;
 }
 .tt{
-    gap: 83.5%;
+    gap: 20.5%;
 }
 .msg {
     text-align: left;
     color: white;
+    margin-top: 15px;
 }
 .linkcuenta{
     font-size: 2rem;
@@ -339,7 +340,8 @@ label{
     font-size: 25px;
 }
 textarea{
-    width: 160%;
+    max-width: 200%;
+   min-width:  115%;
 }
 .mssg{
     
@@ -372,4 +374,10 @@ textarea{
 }
 .send img{
     width: 100%;
+}
+
+
+
+#botonsecreto{
+    cursor: pointer;
 }

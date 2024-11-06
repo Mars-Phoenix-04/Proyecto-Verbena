@@ -115,7 +115,7 @@
                 <form class="form">
                     <Label>Nombre de Usuario</Label>
                     <div class="WInput">
-                        <input type="text" class="input" placeholder="Escribe tu nombre">
+                        <input id="usuarioN" type="text" class="input" placeholder="Escribe tu nombre">
                         <svg id="Layer_1" class="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1920">
                             <defs>
                               <style>
@@ -183,7 +183,7 @@
                     <input id="checkbox" type="checkbox" name="" id="" title="Aceptar términos y condiciones">
                 <Label><a href="http://">Aceptar términos y condiciones</a></Label>
                 </div>
-                <button id="btn-registro" class="boton" onclick="mostrar()" >Registrar</button>
+                <button id="btn-registro" class="boton" onclick="register(event)"  >Registrar</button>
             </div>
         </div>  
     </main>
@@ -230,7 +230,7 @@
 <!-- Script de JavaScript -->
 <script src="../JS/elementos/nav.js"></script>
 <script src="../JS/elementos/popups.js"></script>
-<script src="../JS/perfil/perfil.js"></script>
+
 <!-- <script type="module">
     import { signup } from "../JS/ejemplo.js";
     
@@ -276,5 +276,5 @@
             console.error("Ocurrió un error en el registro:", error);
         }
     });
-</script> -->
+</script>  -->
 </html>

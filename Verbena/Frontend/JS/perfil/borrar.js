@@ -26,3 +26,26 @@ function borrarpost(postId) {
 }
 
 
+//Cambiar el color de fondo de el gardado cuando se hace hover en el icono de guadado
+const save = document.querySelectorAll('.save');
+const unsave = document.querySelectorAll('.guard-button');
+unsave.forEach((button, index) => {
+const saves = save[index]; 
+button.addEventListener('mouseenter', () => {
+saves.style.backgroundColor = 'var(--color13)'; 
+});
+button.addEventListener('mouseleave', () => {
+saves.style.backgroundColor = 'var(--color12)'; 
+});
+});
+//Funcion para borrar nuestras publicaciones, aun falta vincular con la base de datos
+function unsaves(saveId) {
+    const confirmarunsave = confirm("¿Estás seguro de que deseas eliminar este guardado?.");
+        if (confirmarunsave) {
+        const unsaved = document.getElementById(saveId);
+        if (unsaved) {
+            unsaved.remove(); 
+            alert("¡Publicación eliminada! Esperamos sigas guardando las publicaciones de tu interes:)");
+        }
+    }
+}

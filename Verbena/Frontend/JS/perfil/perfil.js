@@ -31,6 +31,8 @@ function saveChanges(event) {
     const Cusuario = document.getElementById('username');
     const Ccorreo = document.getElementById('email');
     const Ccontra = document.getElementById('password');
+    const profileHeader = document.querySelector('.profile-header h2');
+    const navname = document.getElementById('nameN')
 
     //SI y solo SI se cambiaron los valores en los campos, aqui los recupera
     //si no hay valores nuevos, nomas toma los valores de ahi
@@ -49,7 +51,7 @@ function saveChanges(event) {
     if (emailChanged && !VerficarEM(newEmail)) {
         alert('Por favor ingresa un correo electrónico válido.');
         correo.focus();
-        return;  
+        return;
     }
     //Facil y sencillo, revisa si hubo cambios y si no hay lo regresa y todo sigue igual
     if (!usernameChanged && !emailChanged && !passwordChanged) {
@@ -71,30 +73,13 @@ function saveChanges(event) {
         originalUsername = newUsername;
         originalEmail = newEmail;
         originalPassword = newPassword;
+
+        profileHeader.textContent = originalUsername;
+        navname.textContent = originalUsername;
+
+
         //Vuelve a cargar la pagina simulando que se guardan los cambios.
-        location.reload();
-    }
-}
+        // location.reload();
 
-//Funcion para mostrar los datos registrados
-function mostrar() {
-    // Obtener los valores de los campos de registro
-    const nombreUsuario = document.querySelector('.registro .WInput input[type="text"]').value;
-    const correoElectronico = document.getElementById('email').value;
-
-    // Verificar que los campos no estén vacíos
-    if (nombreUsuario && correoElectronico) {
-        // Asignar los valores al perfil
-        document.getElementById('.profile-info #username').textContent = nombreUsuario;
-        document.querySelector('.profile-header h2').textContent = nombreUsuario;
-        document.querySelector('.profile-info #email').value = correoElectronico;
-
-        // Confirmación de registro
-        document.querySelector('html').classList.remove('desbloquear');
-        document.querySelector('html').classList.add('bloquear');
-        document.querySelector('#popup').classList.remove('oculto');
-        document.querySelector('#popup').classList.add('mostrar');
-    } else {
-        alert("Por favor, completa todos los campos.");
     }
 }

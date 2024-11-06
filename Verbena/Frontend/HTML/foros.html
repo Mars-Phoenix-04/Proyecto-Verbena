@@ -96,8 +96,8 @@
         <div id="foro-publicacion">
             <div class="foros">
 
-                <div id="Cuidado de plantas" class="categorias">
-                    <div id="plantas" class=" titulos">
+                <div id="Cuidadodeplantas" class="categorias">
+                    <div class=" titulos">
                         <img class="icon" src="../Assets/img/svg/icons/CPINav.svg" alt="">
                         <h2>Cuidado de Plantas</h3>
                     </div>
@@ -105,8 +105,8 @@
                         <div class="tema" onclick="mostrar(this)">
                             <h3>Tema</h3>
                             <span class="nomensajes">
-                                Mensajes: <br>
-                                (No. de Mensajes)
+                               No. Mensajes: 
+                                
                             </span>
                             <span class="usuario">
                                 <img src="../Assets/img/svg/icons/User.svg">
@@ -118,26 +118,28 @@
                             <div class="title">
                                 <h3>Tema del Foro Seleccionado</h3>
                             </div>
-                            <div class="discusion">
-                                <div class="user">
-                                    <img src="../Assets/img/svg/icons/User.svg" alt="">
-                                    <h4>Nombre usuario</h4>
-                                </div>
-                                <div class="message">
-                                    <div class="fecha">
-                                        <p id="fecha"><b>Fecha de Publicación: 00/00/2024 </b></p>
+                            <div id="conve" >
+                                <div class="discusion">
+                                    <div class="user">
+                                        <img src="../Assets/img/svg/icons/User.svg" alt="">
+                                        <h4>Nombre usuario</h4>
                                     </div>
-                                    <div class="mensaje">
-                                        <p>Mensaje</p>
+                                    <div class="message">
+                                        <div class="fecha">
+                                            <p id="fecha"><b>Fecha de Publicación: 00/00/2024 </b></p>
+                                        </div>
+                                        <div class="mensaje">
+                                            <p>Mensaje</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="oculto">
-                                <input type="text" placeholder="Responder">
-                                <button class="send"><img src="../Assets/img/png/play-button.png" alt=""></button>
+                            <div id="coment" class="oculto">
+                                <input id="comentario" type="text" placeholder="Responder">
+                                <button class="send" onclick="agregarMensaje()"><img src="../Assets/img/png/play-button.png" alt=""></button>
                             </div>
-                            <div class="legend ">
+                            <div id="legend" class="legend ">
                                 <p>
                                     <b>
                                         <a class="linkcuentaB" href="../HTML/iniciarsesion.html">Inicia sesión</a> o 
@@ -158,8 +160,8 @@
                         <div class="tema" onclick="mostrar(this)">
                             <h3>Tema</h3>
                             <span class="nomensajes">
-                                Mensajes: <br>
-                                (No. de Mensajes)
+                               No. Mensajes: 
+                                
                             </span>
                             <span class="usuario">
                                 <img src="../Assets/img/svg/icons/User.svg">
@@ -171,35 +173,37 @@
                             <div class="title">
                                 <h3>Tema del Foro Seleccionado</h3>
                             </div>
-                            <div class="discusion">
-                                <div class="user">
-                                    <img src="../Assets/img/svg/icons/User.svg" alt="">
-                                    <h4>Nombre usuario</h4>
-                                </div>
-                                <div class="message">
-                                    <div class="fecha">
-                                        <p id="fecha"><b>Fecha de Publicación: 00/00/2024 </b></p>
+                            <div id="conve" >
+                                <div class="discusion">
+                                    <div class="user">
+                                        <img src="../Assets/img/svg/icons/User.svg" alt="">
+                                        <h4>Nombre usuario</h4>
                                     </div>
-                                    <div class="mensaje">
-                                        <p>Mensaje</p>
+                                    <div class="message">
+                                        <div class="fecha">
+                                            <p id="fecha"><b>Fecha de Publicación: 00/00/2024 </b></p>
+                                        </div>
+                                        <div class="mensaje">
+                                            <p>Mensaje</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="oculto">
-                                <input type="text" placeholder="Responder">
-                                <button class="send"><img src="../Assets/img/png/play-button.png" alt=""></button>
+                            <div id="coment" class="oculto">
+                                <input id="comentario" type="text" placeholder="Responder">
+                                <button class="send" onclick="agregarMensaje()"><img src="../Assets/img/png/play-button.png" alt=""></button>
                             </div>
-                            <div class="legend ">
+                            <div id="legend" class="legend ">
                                 <p>
                                     <b>
                                         <a class="linkcuentaB" href="../HTML/iniciarsesion.html">Inicia sesión</a> o 
                                         <a class="linkcuentaB" href="../HTML/registro.html">regístrate</a>
-                                    </b> para poder guardar este foro y participar en él.
+                                    </b>  para poder guardar este foro y participar en él.
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </div>  
 
                 </div>
 
@@ -212,8 +216,8 @@
                         <div class="tema" onclick="mostrar(this)">
                             <h3>Tema</h3>
                             <span class="nomensajes">
-                                Mensajes: <br>
-                                (No. de Mensajes)
+                               No. Mensajes: 
+                                
                             </span>
                             <span class="usuario">
                                 <img src="../Assets/img/svg/icons/User.svg">
@@ -225,26 +229,28 @@
                             <div class="title">
                                 <h3>Tema del Foro Seleccionado</h3>
                             </div>
-                            <div class="discusion">
-                                <div class="user">
-                                    <img src="../Assets/img/svg/icons/User.svg" alt="">
-                                    <h4>Nombre usuario</h4>
-                                </div>
-                                <div class="message">
-                                    <div class="fecha">
-                                        <p id="fecha"><b>Fecha de Publicación: 00/00/2024 </b></p>
+                            <div id="conve" >
+                                <div class="discusion">
+                                    <div class="user">
+                                        <img src="../Assets/img/svg/icons/User.svg" alt="">
+                                        <h4>Nombre usuario</h4>
                                     </div>
-                                    <div class="mensaje">
-                                        <p>Mensaje</p>
+                                    <div class="message">
+                                        <div class="fecha">
+                                            <p id="fecha"><b>Fecha de Publicación: 00/00/2024 </b></p>
+                                        </div>
+                                        <div class="mensaje">
+                                            <p>Mensaje</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="oculto">
-                                <input type="text" placeholder="Responder">
-                                <button class="send"><img src="../Assets/img/png/play-button.png" alt=""></button>
+                            <div id="coment" class="oculto">
+                                <input id="comentario" type="text" placeholder="Responder">
+                                <button class="send" onclick="agregarMensaje()"><img src="../Assets/img/png/play-button.png" alt=""></button>
                             </div>
-                            <div class="legend ">
+                            <div id="legend" class="legend ">
                                 <p>
                                     <b>
                                         <a class="linkcuentaB" href="../HTML/iniciarsesion.html">Inicia sesión</a> o 
@@ -253,39 +259,39 @@
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </div> 
 
                 </div>
 
             </div>
             <div id="publicar">
                 <div class="titulosP">
-                    <h2>Crear Publicación</h2>
+                    <h2 id="botonsecreto" onclick="abrirP()">Crear Publicación</h2>
                 </div>
-                <div class="oculto">
-                    <div class="cat">
+                <div id="panel" class="oculto">
+                    <div id="Categoria" class="cat">
                         <label for="opciones">Categoria:</label>
                         <select id="opciones" name="opciones">
-                            <option value="opcion0">Selecciona una opción</option>
+                            <option value="0">Selecciona una opción</option>
 
-                            <option value="opcion1">Cuidado de Plantas</option>
-                            <option value="opcion2">Manualidades</option>
-                            <option value="opcion3">Las 3R</option>
+                            <option value="1">Cuidado de Plantas</option>
+                            <option value="2">Manualidades</option>
+                            <option value="3">Las 3R</option>
                         </select>
                     </div>
                     <div class="tt">
                         <label>Tema: </label> 
-                        <input type="text">
+                        <input id="tema" type="text">
                     </div>
                     <div class="msg">
                         <label>Mensaje: </label>
                         <textarea id="mensaje" name="mensaje" rows="20" cols="20"
                             placeholder="Escribe tu mensaje aquí..."></textarea>
                     </div>
-                    <button class="publi">Publicar</button>
+                    <button class="publi" onclick="publicar()">Publicar</button>
                     <button class="cancel">Cancelar</button>
                 </div>
-                <div class="mssg ">
+                <div id="IR" class="mssg ">
                     <p>
                         <b>
                             <a class="linkcuenta" href="../HTML/iniciarsesion.html">Inicia sesión</a> o 
