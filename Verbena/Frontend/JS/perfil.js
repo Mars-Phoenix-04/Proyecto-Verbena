@@ -25,7 +25,8 @@ function VerficarEM(email) {
 }
 
 //Funcion para guardar los cambios de los datos
-function saveChanges() {
+function saveChanges(event) {
+    event.preventDefault();
     //Aqui nomas recupera los datos de los campos, facil? Lo es jajaja
     const Cusuario = document.getElementById('username');
     const Ccorreo = document.getElementById('email');
@@ -52,7 +53,7 @@ function saveChanges() {
     }
     //Facil y sencillo, revisa si hubo cambios y si no hay lo regresa y todo sigue igual
     if (!usernameChanged && !emailChanged && !passwordChanged) {
-        alert('No se han realizado cambios. Haga clic en el icono de lapiz para realizarlos y luego presione este botón para guardarlos.');
+        alert('No se han realizado cambios. Haga clic en el icono de lápiz para realizarlos y luego presione este botón para guardarlos.');
         return;
     }
     //Aqui la verdad no es como que los guarde en la base de datos (porque pues falta eso)
@@ -60,7 +61,7 @@ function saveChanges() {
     const confirmation = confirm('¿Deseas guardar los cambios?');
     //Si le da a okay, entonces le dice que se guardaron los datos
     if (confirmation) {
-        alert('Cambios guardados correctamente.');
+        alert('Cambios guardados correctamente. Se volvera a cargar la página para reflejar los cambios, todo bien:)');
         //Y diras, Mars para que es esto, pues no se NTC JAJAJA
         //Vuelve a "Bloquear" los campos para que no los pueda editar y por ultimo...
         Cusuario.readOnly = true;
@@ -70,5 +71,7 @@ function saveChanges() {
         originalUsername = newUsername;
         originalEmail = newEmail;
         originalPassword = newPassword;
+        //Vuelve a cargar la pagina simulando que se guardan los cambios.
+        location.reload();
     }
 }
