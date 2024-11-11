@@ -351,6 +351,7 @@ h2 {
 }
 label{
     font-size: 1.5rem;
+    margin-top: 1%;
     font-family: var(--estilot);
 }
 textarea{
@@ -394,4 +395,24 @@ textarea{
 
 #botonsecreto{
     cursor: pointer;
+}
+
+#opciones{
+background: none;
+color: white;
+font-size: 1rem;
+font-weight: bold;
+border: none;
+padding: 3%;
+transition: 0.2s ease-in-out;
+}
+#opciones:hover{
+background-color: var(--color2);
+border-radius: 50px;
+}
+#tema{
+    font-family: var(--estilot);
+}
+#mensaje{
+    font-family: var(--estilot);
 }
