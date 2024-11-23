@@ -93,6 +93,15 @@
         </div>
     </header>
     <!-- Contenido principal de la página -->
+
+
+
+
+
+
+
+
+
     <main>
         <!-- POPUP -->
         <div id="popup" class="popup oculto ">
@@ -187,6 +196,17 @@
             </div>
         </div>  
     </main>
+
+
+
+
+
+
+
+
+
+
+
     <!-- Pie de página -->
     <footer class="footer">
         <div class="FGC">
@@ -231,50 +251,55 @@
 <script src="../JS/elementos/nav.js"></script>
 <script src="../JS/elementos/popups.js"></script>
 
-<!-- <script type="module">
-    import { signup } from "../JS/ejemplo.js";
+<script type="module">
+   import { signup } from "../JS/validacionDatos.js";
+
+function validarCorreo(correo) {
+    const regex = /^[a-zA-Z0-9._-]{2,}@[a-zA-Z]{2,}\.[a-zA-Z]{2,}$/;
+    return regex.test(correo);
+}
+
+document.getElementById('btn-registro').addEventListener('click', async (e) => {
+    e.preventDefault();
     
-    function validarCorreo(correo) {
-        const regex = /^[a-zA-Z0-9._-]{2,}@[a-zA-Z]{2,}\.[a-zA-Z]{2,}$/;
-        return regex.test(correo);
-    }
+    const usuario = document.getElementById("usuarioN").value; // Nombre de usuario
+    const email = document.getElementById("email").value; // Correo electrónico
+    const password = document.getElementById("password").value; // Contraseña
+    const password2 = document.getElementById("password2").value; // Confirmación de contraseña
+    const checked = document.getElementById("checkbox").checked; // Verificar si acepta términos y condiciones
 
-    document.getElementById('btn-registro').addEventListener('click', async (e) => {
-        e.preventDefault();
-        const email = document.getElementById("email");
-        const password = document.getElementById("password").value;
-        const password2 = document.getElementById("password2").value;
-        const checked = document.getElementById("checkbox").checked; // Cambiado a .checked en lugar de .value
-
-        try {
-            if (!validarCorreo(email.value)) {
-                alert("Ingrese una dirección de correo válida");
-                return;
-            }
-            if (password !== password2) {
-                alert("Las contraseñas no coinciden, por favor intente de nuevo");
-                return;
-            }
-            if (password.length < 6) {
-                alert("Ingrese una contraseña de más de 5 caracteres");
-                return;
-            }
-            if (!checked) {
-                alert("Revise los términos y condiciones");
-                return;
-            }
-
-            await signup(email.value, password);
-            
-            alert("Te has registrado correctamente, presiona el botón para redirigirte a tu perfil");
-            mostrar();
-            setTimeout(() => {
-                window.location.href = "../HTML/perfil.html";
-                document.getElementById("form").reset();
-            }, 1000);
-        } catch (error) {
-            console.error("Ocurrió un error en el registro:", error);
+    try {
+        if (!validarCorreo(email)) {
+            alert("Ingrese una dirección de correo válida");
+            return;
         }
-    });
-</script>  -->
+        if (password !== password2) {
+            alert("Las contraseñas no coinciden, por favor intente de nuevo");
+            return;
+        }
+        if (password.length < 6) {
+            alert("Ingrese una contraseña de más de 5 caracteres");
+            return;
+        }
+        if (!checked) {
+            alert("Revise los términos y condiciones");
+            return;
+        }
+
+        // Llamar a la función de signup con los tres parámetros
+        await signup(email, password, usuario);
+        
+      
+        mostrar();  // Asumo que esta función muestra un mensaje o animación
+        setTimeout(() => {
+            window.location.href = "../HTML/perfil.html";  // Redirigir al perfil
+            document.getElementById("form").reset(); // Resetear el formulario
+        }, 1000);
+    } catch (error) {
+        console.error("Ocurrió un error en el registro:", error);
+        alert(error.message); // Mostrar el error al usuario
+    }
+});
+
+</script>  
 </html>
