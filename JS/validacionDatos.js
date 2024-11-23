@@ -51,7 +51,6 @@ export async function signup(email, password, usuario) {
 
         // Ahora guardamos los datos del usuario en Firestore
         await addDoc(colectusuarios, {
-            uid: user.uid,  // ID único de Firebase
             username: usuario,
             email: email,
             password: password,
@@ -63,6 +62,9 @@ export async function signup(email, password, usuario) {
     } catch (error) {
         if (error.code === 'auth/email-already-in-use') {
             throw new Error("El correo electrónico ya ha sido registrado");
+        }
+        if(error.code === 'auth/user-already-in-use'){
+            throw new Error("El nombre de usuario ya ha sido registrado");
         }
         throw new Error("Error: " + error.message);
     }
@@ -76,6 +78,9 @@ export async function addData(colectusuarios, data) {
         throw new Error("Error: " + error.message);
     }
 }
+
+
+
 
 
 

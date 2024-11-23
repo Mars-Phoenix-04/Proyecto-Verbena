@@ -252,7 +252,7 @@ document.getElementById('btn-inicio').addEventListener('click', async (e) => {
             // Redirige al perfil si el login es exitoso
             setTimeout(() => {
                 mostrar();
-                document.getElementById("form").reset();  // Limpiar el formulario
+                document.getElementById("form").clear();  // Limpiar el formulario
             }, 1000);
         }
     } catch (error) {

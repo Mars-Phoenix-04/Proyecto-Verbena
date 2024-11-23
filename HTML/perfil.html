@@ -106,7 +106,7 @@
         </div>
         <!-- Informacion de la cuenta -->
         <div class="profile-info">
-            <form class="form" onsubmit="handleFormSubmit(event)">
+            <form class="form" onsubmit="saveChanges(event)">
                 <div class="form-group">
                     <label>Nombre de Usuario</label>
                     <div class="WInput">
@@ -208,7 +208,7 @@
                 </div>
 
                 <div class="form-group button-group">
-                    <button type="submit" class="save-button" onclick="saveChanges(event)">Guardar Cambios</button>
+                    <button type="submit" class="save-button">Guardar Cambios</button>
                 </div>
             </form>
         </div>
@@ -386,12 +386,12 @@
         </div>
     </footer>
 
-    
+
 </body>
 <!-- Scripts -->
 <script src="../JS/elementos/nav.js"></script>
 <script src="../JS/perfil/logout.js"></script>
-<script src="../JS/perfil/perfil.js"></script>
+<script type="module" src="../JS/perfil/perfil.js"></script>
 <script src="../JS/perfil/borrar.js"></script>
 <script src="../JS/perfil/tabs.js"></script>
 
