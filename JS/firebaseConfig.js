@@ -42,9 +42,20 @@ const firebaseConfig = {
     appId: "1:1029837611168:web:a11062824a15f7d68169c5"
 };
 
-//Inicializar Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
 
-module.exports = { db, auth };
+// Inicializa la app de Firebase
+const app = initializeApp(firebaseConfig);
+
+// Inicializa Firestore y Firebase Auth
+const db = getFirestore(app);
+const auth = getAuth(app);
+
+// Función para obtener todos los usuarios
+async function getUsers() {
+    const users = collection(db, "usuarios");
+    const usersSnap = await getDocs(users);
+    return usersSnap;
+}
+
+// Exporta lo necesario para usar en otras páginas
+export { auth, getUsers, signOut };

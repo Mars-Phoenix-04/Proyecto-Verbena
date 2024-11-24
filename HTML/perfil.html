@@ -49,14 +49,14 @@
                         <button id="boton">Iniciar Sesión</button>
                     </a>
                 </div>
-                <div class="signav" id="crearcuenta" style="display: none;">
+                <div class="signav " id="crearcuenta" style="display: none;">
                     <a href="../HTML/registro.html">
                         <button id="botongris">Crear Cuenta</button>
                     </a>
                 </div>
                 <!--Usuario-->
-                <div class="user">
-                    <div class="user-container">
+                <div id="userLogin" class="user" >
+                    <div class="user-container ">
                         <img class="icono" src="../Assets/Img/SVG/icons/User.svg" alt="User Icon">
                         <span id="nameN" class="username">Nombre de Usuario</span>
                     </div>
@@ -95,6 +95,16 @@
             </div>
         </div>
     </header>
+
+
+
+
+
+
+
+
+
+
     <!-- Contenido principal de la página -->
     <div class="profile-container">
         <!-- Encabezado con foto y Nombre -->
@@ -339,7 +349,7 @@
         </div>
         <div class="div"></div>
         <div class="Cerrar">
-            <button id="logout" class="logout-button" ">Cerrar Sesión</button>
+            <button id="logout" class="logout-button" >Cerrar Sesión</button>
         </div>
     </div>
 
@@ -389,11 +399,12 @@
 
 </body>
 <!-- Scripts -->
-<script src="../JS/elementos/nav.js"></script>
-<script src="../JS/perfil/logout.js"></script>
-<script type="module" src="../JS/perfil/perfil.js"></script>
+<script type="module" src="../JS/perfil/perfil.js" defer></script>
+<script  src="../JS/elementos/nav.js" defer></script>
+
 <script src="../JS/perfil/actualizarperfil.js"></script>
 <script src="../JS/perfil/borrar.js"></script>
 <script src="../JS/perfil/tabs.js"></script>
+
 
 </html>
