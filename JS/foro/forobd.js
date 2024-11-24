@@ -1,26 +1,5 @@
 // Importa Firestore y Firebase
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-import {
-    getFirestore,
-    collection,
-    addDoc,
-    updateDoc,
-    doc,
-    deleteDoc,
-  } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
-
-const firebaseConfig = {
-    apiKey: "AIzaSyBXtX2P6IsJZRwiuQqodz9yPT7c4V1zQQI",
-    authDomain: "autenticacionusuariov.firebaseapp.com",
-    projectId: "autenticacionusuariov",
-    storageBucket: "autenticacionusuariov.firebasestorage.app",
-    messagingSenderId: "1029837611168",
-    appId: "1:1029837611168:web:a11062824a15f7d68169c5"
-};
-
-// Inicializar Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+import { db, auth } from "../credenciales";
 
 
 const colecforos = collection(db, "foros"); //Colección de foros.
