@@ -1,67 +1,84 @@
 // authHandler.js
-import { auth, getUsers, signOut } from './firebaseConfig.js';
+import { auth, db, users,usersSnap } from './firebaseConfig.js';
+
+
+
+
+
+auth.onAuthStateChanged(user => {
+    if (user) {
+        console.log("auth: signed in");
+        // Mostrar los datos de todos los usuarios
+        usersSnap.forEach((doc) => {
+            console.log("Document data:", doc.data());  // Mostrar los datos de cada usuario
+        });
+        loginCheck(user);
+    } else {
+        console.log("auth: signed out");
+        loginCheck(user);
+    }
+});
+
+
+const inicio = document.getElementById("iniciosesion");
+const crear = document.getElementById("crearcuenta");
+const Lusuario = document.getElementById("userLogin");
+
+const loginlinks = document.querySelectorAll(".login");
+const panel = document.getElementById('panel');
+const info = document.getElementById('IR');
+const conve = document.getElementById('coment');
+const legend = document.getElementById('legend');
 
 const loginCheck = (user) => {
-    const inicio = document.getElementById("iniciosesion");
-    const crear = document.getElementById("crearcuenta");
-    const Lusuario = document.getElementById("userLogin");
-    const panel = document.getElementById('panel');
-    const info = document.getElementById('IR');
-    const conve = document.getElementById('coment');
-    const legend = document.getElementById('legend');
-
     if (user) {
-        inicio.style.display = "none";
-        crear.style.display = "none";
-        Lusuario.style.display = "block";
-        panel.classList.toggle('panelcontrol');
-        conve.classList.toggle('commit');
-        legend.classList.toggle('legend');
-        info.classList.toggle('mssg');
+        // Si hay un usuario autenticado
+        inicio.style.display = "none";  // Ocultar "Iniciar sesión"
+        crear.style.display = "none";   // Ocultar "Crear cuenta"
+        Lusuario.style.display = "";  // Mostrar el usuario logueado
+
+        // Alternar clases para los elementos relacionados con la sesión activa
+    
     } else {
-        inicio.style.display = "block";
-        crear.style.display = "block";
-        Lusuario.style.display = "none";
-        panel.classList.toggle('oculto');
-        info.classList.toggle('oculto');
-        conve.classList.toggle('oculto');
-        legend.classList.toggle('oculto');
+        // Si no hay usuario autenticado
+        inicio.style.display = "block"; // Mostrar "Iniciar sesión"
+        crear.style.display = "block";  // Mostrar "Crear cuenta"
+        Lusuario.style.display = "none"; // Ocultar el usuario logueado
+
+     
     }
 }
 
-// Obtener los usuarios desde Firestore
-async function showUsers() {
-    const usersSnap = await getUsers();
-    usersSnap.forEach((doc) => {
-        console.log("Document data:", doc.data());
-    });
-}
 
-// Manejar el evento de logout
-const logout = document.querySelector("#logout");
-logout.addEventListener('click', e => {
-    e.preventDefault();
-    signOut(auth).then(() => {
-        const fuga = confirm('¿Estás seguro que deseas salir?');
-        if (fuga) {
-            window.location.href = "../index.html"; // Redirigir a la página principal después de hacer logout
-        }
-    });
+
+
+let username = 'aun no hay cambios';
+
+
+const navname = document.getElementById('nameN');
+
+
+
+auth.onAuthStateChanged((user) => {
+    if (user) {
+        // Iterar sobre los documentos de usuarios
+        const uid = user.email;
+
+        usersSnap.forEach(doc => {
+            const data = doc.data();
+            if (data.email === uid) {
+                username = data.username; // Guardar el nombre de usuario
+
+            }
+        });
+
+        console.log(username)
+       
+        navname.textContent=username
+    } else {
+        console.log("NO esta logeado")
+    };
 });
 
-// Función para manejar cambios de estado de autenticación
-function handleAuthState() {
-    onAuthStateChanged(auth, user => {
-        if (user) {
-            console.log("auth: signed in");
-            showUsers();
-            loginCheck(user);
-        } else {
-            console.log("auth: signed out");
-            loginCheck(user);
-        }
-    });
-}
 
-// Llamar a la función para manejar el estado de autenticación
-handleAuthState();
+console.log("Username del usuario logueado:", username);

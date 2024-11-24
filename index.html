@@ -28,71 +28,85 @@
             <div class="nav-container">
                 <!-- Logo de Verbena -->
                 <div class="logo">
-                    <a href="index.html">
-                        <img src="Assets/Img/png/VerbenaIsologo.png" alt="Logo">
-                    </a>    
+                    <a href="../index.html">
+                        <img src="../Assets/Img/png/VerbenaIsologo.png" alt="Logo">
+                    </a>
                 </div>
                 <!-- Link Foros con desplegable -->
-                <div id="foros" onclick="toggleDropdown()" style="width: 50%;">
+                <div id="foros" onclick="toggleDropdown()">
                     Foros
                     <div id="foroflecha" class="flecha">
-                    <span></span>
+                        <span></span>
                     </div>
                 </div>
-                
+
                 <!-- Botones de inicio de sesión y registro -->
-                <div class="loginav" id="iniciosesion">
-                    <a href="HTML/iniciarsesion.html">
+                <div class="loginav" id="iniciosesion" style="display: none;">
+                    <a href="../HTML/iniciarsesion.html">
                         <button id="boton">Iniciar Sesión</button>
                     </a>
                 </div>
-                <div class="signav" id="crearcuenta">
-                    <a href="HTML/registro.html">
+                <div class="signav " id="crearcuenta" style="display: none;">
+                    <a href="../HTML/registro.html">
                         <button id="botongris">Crear Cuenta</button>
                     </a>
                 </div>
-
                 <!--Usuario-->
-                <div class="user" style="display: none;">
-                    <div class="user-container">
-                        <img class="icono" src="Assets/Img/SVG/icons/User.svg" alt="User Icon">
-                        <span class="username">Nombre de Usuario</span>
+                <div id="userLogin" class="user">
+                    <div class="user-container ">
+                        <img class="icono" src="../Assets/Img/SVG/icons/User.svg" alt="User Icon">
+
+                        <a href="../HTML/perfil.html">
+                            <span id="nameN" class="username">Nombre de Usuario</span>
+                        </a>
                     </div>
-                </div>                
-            </div>  
+                </div>
+            </div>
         </nav>
         <div id="forosDropdown" class="DContent">
             <div class="DGrid">
                 <div class="Categoria">
-                    <a href="HTML/foros.html" class="nodec">
-                    <img src="Assets/Img/jpg/CPNav.jpg" alt="Cuidado de Plantas" class="DDI">
-                    <div class="IT">
-                        <img src="Assets/Img/svg/icons/CPINav.svg" alt="Ícono Cuidado de Plantas" class="icon">
-                        <p class="ITLink">Cuidado de Plantas</p>
-                    </div>
+                    <a href="../HTML/foros.html" class="nodec">
+                        <img src="../Assets/Img/jpg/CPNav.jpg" alt="Cuidado de Plantas" class="DDI">
+                        <div class="IT">
+                            <img src="../Assets/Img/svg/icons/CPINav.svg" alt="Ícono Cuidado de Plantas" class="icon">
+                            <p class="ITLink">Cuidado de Plantas</p>
+                        </div>
                     </a>
                 </div>
                 <div class="Categoria">
-                    <a href="HTML/foros.html" class="nodec">
-                    <img src="Assets/Img/jpg/ManNav.jpg" alt="Manualidades" class="DDI">
-                    <div class="IT">
-                        <img src="Assets/Img/svg/icons/MINav.svg" alt="Ícono Manualidades" class="icon">
-                        <p class="ITLink">Manualidades</p>
-                    </div>
+                    <a href="../HTML/foros.html" class="nodec">
+                        <img src="../Assets/Img/jpg/ManNav.jpg" alt="Manualidades" class="DDI">
+                        <div class="IT">
+                            <img src="../Assets/Img/svg/icons/MINav.svg" alt="Ícono Manualidades" class="icon">
+                            <p class="ITLink">Manualidades</p>
+                        </div>
                     </a>
                 </div>
                 <div class="Categoria">
-                    <a href="HTML/foros.html" class="nodec">
-                    <img src="Assets/Img/jpg/3RNav.jpg" alt="Las 3R" class="DDI">
-                    <div class="IT">
-                        <img src="Assets/Img/svg/icons/3RINav.svg" alt="Ícono Las 3R" class="icon">
-                        <p class="ITLink">Las 3R</p>
-                    </div>
+                    <a href="../HTML/foros.html" class="nodec">
+                        <img src="../Assets/Img/jpg/3RNav.jpg" alt="Las 3R" class="DDI">
+                        <div class="IT">
+                            <img src="../Assets/Img/svg/icons/3RINav.svg" alt="Ícono Las 3R" class="icon">
+                            <p class="ITLink">Las 3R</p>
+                        </div>
                     </a>
                 </div>
             </div>
         </div>
     </header>
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- Encabezado -->
     <div class="VEncabezado">
             <h1 class="VETexto">
@@ -229,9 +243,10 @@
 </body>
 <!-- Script de JavaScript -->
 <!-- En tu archivo HTML -->
-<script type="module" src="JS/firebaseConfig.js" async></script>
-<script type="module" src="JS/authHandler.js" async></script>
 
+
+<script type="module" src="../JS/firebaseConfig.js"></script>
+<script type="module" src="../JS/autohandler.js"></script>
 <script src="JS/elementos/nav.js"></script>
 <script src="JS/elementos/IPopup.js"></script>
 </html>

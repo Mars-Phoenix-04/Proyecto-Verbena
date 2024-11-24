@@ -55,10 +55,13 @@
                     </a>
                 </div>
                 <!--Usuario-->
-                <div id="userLogin" class="user" >
+                <div id="userLogin" class="user">
                     <div class="user-container ">
                         <img class="icono" src="../Assets/Img/SVG/icons/User.svg" alt="User Icon">
-                        <span id="nameN" class="username">Nombre de Usuario</span>
+
+                        <a href="../HTML/perfil.html">
+                            <span id="nameN" class="username">Nombre de Usuario</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -112,7 +115,7 @@
             <div class="profile-icon">
                 <img src="../Assets/img/svg/icons/PFP.svg">
             </div>
-            <h2>Nombre de Usuario</h2>
+            <h2 id="NUS">Nombre de Usuario</h2>
         </div>
         <!-- Informacion de la cuenta -->
         <div class="profile-info">
@@ -349,7 +352,7 @@
         </div>
         <div class="div"></div>
         <div class="Cerrar">
-            <button id="logout" class="logout-button" >Cerrar Sesión</button>
+            <button id="logout" class="logout-button">Cerrar Sesión</button>
         </div>
     </div>
 
@@ -399,10 +402,11 @@
 
 </body>
 <!-- Scripts -->
-<script type="module" src="../JS/perfil/perfil.js" defer></script>
-<script  src="../JS/elementos/nav.js" defer></script>
 
-<script src="../JS/perfil/actualizarperfil.js"></script>
+<script type="module" src="../JS/firebaseConfig.js"></script>
+<script type="module" src="../JS/autohandler.js"></script>
+<script src="../JS/elementos/nav.js"></script>
+<script type="module" src="../JS/perfil/actualizarperfil.js"></script>
 <script src="../JS/perfil/borrar.js"></script>
 <script src="../JS/perfil/tabs.js"></script>
 

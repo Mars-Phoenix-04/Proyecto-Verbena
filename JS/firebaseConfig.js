@@ -1,3 +1,4 @@
+// Importa Firestore y Firebase
 import { initializeApp, } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
 import {
     getAuth,                         // Obtiene la instancia del servicio de autenticación.
@@ -32,6 +33,11 @@ import {
     endBefore                // Paginación: filtra antes de un valor específico
 } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
 
+
+
+
+
+
 // Configuración de Firebase
 const firebaseConfig = {
     apiKey: "AIzaSyBXtX2P6IsJZRwiuQqodz9yPT7c4V1zQQI",
@@ -41,21 +47,18 @@ const firebaseConfig = {
     messagingSenderId: "1029837611168",
     appId: "1:1029837611168:web:a11062824a15f7d68169c5"
 };
-
-
 // Inicializa la app de Firebase
 const app = initializeApp(firebaseConfig);
 
-// Inicializa Firestore y Firebase Auth
+// Inicializar Firestore y Firebase Auth
 const db = getFirestore(app);
 const auth = getAuth(app);
 
-// Función para obtener todos los usuarios
-async function getUsers() {
-    const users = collection(db, "usuarios");
-    const usersSnap = await getDocs(users);
-    return usersSnap;
-}
+
+const users = collection(db, "usuarios");  // Obtener la colección de usuarios
+
+// Obtener todos los documentos de la colección de usuarios
+const usersSnap = await getDocs(users);
 
 // Exporta lo necesario para usar en otras páginas
-export { auth, getUsers, signOut };
+export { auth, db, users,usersSnap };

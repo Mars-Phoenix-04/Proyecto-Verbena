@@ -1,3 +1,4 @@
+import { auth, db, users,usersSnap } from '../firebaseConfig.js';
 
 //Esta funcion es para mostrar los foros en una seccion nueva
 function mostrar(elemento) {

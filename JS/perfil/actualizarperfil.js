@@ -1,5 +1,5 @@
 
-
+import { auth, db, users, usersSnap } from '../firebaseConfig.js';
 
 
 
@@ -8,6 +8,42 @@
 let originalUsername = '';
 let originalEmail = '';
 let originalPassword = '';
+let username = 'aun no hay cambios';
+
+const NUS = document.getElementById("NUS");
+const navname = document.getElementById('nameN');
+const Cusuario = document.getElementById('username');
+const Ccorreo = document.getElementById('email');
+const Ccontra = document.getElementById('password');
+
+
+
+
+auth.onAuthStateChanged((user) => {
+    if (user) {
+        // Iterar sobre los documentos de usuarios
+        const uid = user.email;
+
+        usersSnap.forEach(doc => {
+            const data = doc.data();
+            if (data.email === uid) {
+                username = data.username; // Guardar el nombre de usuario
+
+            }
+        });
+
+        console.log(username)
+        NUS.textContent = username;
+      
+    } else {
+        console.log("NO esta logeado")
+    };
+});
+
+
+console.log("Username del usuario logueado:", username);
+
+
 
 // //Se entiende por si solo, solo habilita el campo para editar
 function enableEdit(fieldId) {
@@ -33,11 +69,7 @@ function VerficarEM(email) {
 function saveChanges(event) {
     event.preventDefault();
     //     //Aqui nomas recupera los datos de los campos, facil? Lo es jajaja
-    const Cusuario = document.getElementById('username');
-    const Ccorreo = document.getElementById('email');
-    const Ccontra = document.getElementById('password');
-    const profileHeader = document.querySelector('.profile-header h2');
-    const navname = document.getElementById('nameN')
+ 
     //     //SI y solo SI se cambiaron los valores en los campos, aqui los recupera
     //     //si no hay valores nuevos, nomas toma los valores de ahi
     const newUsername = Cusuario.value;
@@ -64,7 +96,7 @@ function saveChanges(event) {
     }
     //     //Aqui la verdad no es como que los guarde en la base de datos (porque pues falta eso)
     //     //Pero aqui te pregunta si quieres guardar los cambios porque ya ves que uno se equivoca,
-         const confirmation = confirm('¿Deseas guardar los cambios?');
+    const confirmation = confirm('¿Deseas guardar los cambios?');
     //     //Si le da a okay, entonces le dice que se guardaron los datos
     if (confirmation) {
         alert('Cambios guardados correctamente. Se volvera a cargar la página para reflejar los cambios, todo bien:)');
@@ -86,3 +118,17 @@ function saveChanges(event) {
 
     }
 }
+
+const logout = document.querySelector("#logout");
+
+logout.addEventListener('click', e => {
+    e.preventDefault();
+    auth.signOut().then(() => {
+        const fuga = confirm('¿Estás seguro que deseas salir?');
+        if (fuga) {
+            // window.location.href = "../index.html";
+            console.log("Sirvio")
+        }
+    })
+
+});
