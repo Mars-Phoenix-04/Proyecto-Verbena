@@ -5,19 +5,16 @@ import { auth, db, users, usersSnap } from '../firebaseConfig.js';
 
 // //Como aun no le se que pedo con la base de datos, aqui se guardan campos
 // //los datos viejitos del usuario
-let originalUsername = '';
-let originalEmail = '';
-let originalPassword = '';
-let username = 'aun no hay cambios';
+
+let username = '';
+let password = "";
+let email = "";
 
 const NUS = document.getElementById("NUS");
 const navname = document.getElementById('nameN');
 const Cusuario = document.getElementById('username');
 const Ccorreo = document.getElementById('email');
 const Ccontra = document.getElementById('password');
-
-
-
 
 auth.onAuthStateChanged((user) => {
     if (user) {
@@ -28,16 +25,24 @@ auth.onAuthStateChanged((user) => {
             const data = doc.data();
             if (data.email === uid) {
                 username = data.username; // Guardar el nombre de usuario
-
+                password = data.password;
+                email = data.email;
             }
         });
 
-        console.log(username)
-        NUS.textContent = username;
-      
+        // Mostrar los datos en la página y en los campos de entrada
+        console.log(username, Cusuario.value, Ccorreo.value, Ccontra.value);
+        
+        NUS.textContent = username;   // Mostrar el nombre de usuario en el HTML
+        navname.textContent = username;  // Actualizar el nombre de usuario en el menú de navegación
+        Cusuario.value = username;   // Actualizar el campo de usuario
+        Ccorreo.value = email;       // Actualizar el campo de correo
+        Ccontra.value = password;    // Actualizar el campo de contraseña
+
     } else {
-        console.log("NO esta logeado")
-    };
+        console.log("NO está logeado");
+        
+    }
 });
 
 
