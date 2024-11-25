@@ -91,25 +91,49 @@ let username = 'aun no hay cambios';
 const navname = document.getElementById('nameN');
 
 
-
-auth.onAuthStateChanged((user) => {
+auth.onAuthStateChanged(async (user) => {
     if (user) {
-        // Iterar sobre los documentos de usuarios
-        const uid = user.email;
+        const currentUserUid = user.uid; // UID del usuario autenticado
 
-        usersSnap.forEach(doc => {
-            const data = doc.data();
-            if (data.email === uid) {
-                username = data.username; // Guardar el nombre de usuario
+        try {
+            // Referencia al documento del usuario autenticado
+            const currentDocRef = doc(db, 'usuarios', currentUserUid);
+            const currentDocSnap = await getDoc(currentDocRef);
 
+            if (currentDocSnap.exists()) {
+                const currentUserData = currentDocSnap.data();
+
+                // UID del documento relacionado
+                const relatedDocUid = currentUserData.uid;
+
+                if (relatedDocUid) {
+                    // Referencia al documento relacionado
+                    const relatedDocRef = doc(db, 'usuarios', relatedDocUid);
+                    const relatedDocSnap = await getDoc(relatedDocRef);
+
+                    if (relatedDocSnap.exists()) {
+                        const relatedData = relatedDocSnap.data();
+
+                        // Actualiza la interfaz con los datos del documento relacionado
+                        username = relatedData.username;
+                        navname.textContent = username;
+
+                        console.log("Datos del documento relacionado:", relatedData);
+                    } else {
+                        console.log("El documento relacionado no existe");
+                    }
+                } else {
+                    console.log("No se encontró un UID relacionado en el documento actual");
+                }
+            } else {
+                console.log("El documento actual no existe");
             }
-        });
-
-        navname.textContent = username
+        } catch (error) {
+            console.error("Error al acceder a los documentos:", error);
+        }
     } else {
-        console.log("NO esta logeado")
-    };
+        console.log("No está logueado");
+    }
 });
-
 
 

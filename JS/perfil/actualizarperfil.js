@@ -162,13 +162,15 @@ async function saveChanges(event) {
         console.log("Usuario no autenticado");
     }
 }
+
+
+
+
 // Verificar formato de correo
 function VerificarEM(email) {
     const papa = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return papa.test(email);
 }
-
-
 
 
 
@@ -191,7 +193,10 @@ logout.addEventListener('click', e => {
 
 
 
-
+export function updateNavName(newUsername) {
+    const navname = document.getElementById('nameN');
+    navname.textContent = newUsername;
+}
 
 
 
