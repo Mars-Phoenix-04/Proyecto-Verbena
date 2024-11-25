@@ -174,7 +174,7 @@ main {
     background-color: var(--color2);
     border-style: none;
     box-sizing: border-box;
-    color: white;
+    color: rgb(255, 255, 255);
     font-family: var(--estilot);
     font-weight: bold;
 }
@@ -193,7 +193,9 @@ main {
     font-size: 1.5rem;
 }
 
-
+#comentario{
+    color: rgb(255, 255, 255);
+}
 
 .bookmark{
     width: 10%;
