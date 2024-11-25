@@ -1,5 +1,40 @@
 // authHandler.js
-import { auth, db, users,usersSnap } from './firebaseConfig.js';
+import {
+    auth,
+    db,
+    USERS,
+    usersSnap,
+    getDoc,
+    doc,
+    updateDoc,
+    setDoc,
+    getDocs,
+    // Importando métodos de autenticación de Firebase
+    getAuth,
+    signInWithEmailAndPassword,
+    createUserWithEmailAndPassword,
+    updateProfile,
+    updateEmail,
+    updatePassword,
+    reauthenticateWithCredential,
+    EmailAuthProvider,
+    onAuthStateChanged,
+    signOut,
+    // Importando métodos de Firestore
+    getFirestore,
+    collection,
+    addDoc,
+    deleteDoc,
+    onSnapshot,
+    query,
+    where,
+    orderBy,
+    limit,
+    startAfter,
+    startAt,
+    endAt,
+    endBefore
+} from './firebaseConfig.js';
 
 
 
@@ -9,9 +44,7 @@ auth.onAuthStateChanged(user => {
     if (user) {
         console.log("auth: signed in");
         // Mostrar los datos de todos los usuarios
-        usersSnap.forEach((doc) => {
-            console.log("Document data:", doc.data());  // Mostrar los datos de cada usuario
-        });
+
         loginCheck(user);
     } else {
         console.log("auth: signed out");
@@ -38,14 +71,14 @@ const loginCheck = (user) => {
         Lusuario.style.display = "";  // Mostrar el usuario logueado
 
         // Alternar clases para los elementos relacionados con la sesión activa
-    
+
     } else {
         // Si no hay usuario autenticado
         inicio.style.display = "block"; // Mostrar "Iniciar sesión"
         crear.style.display = "block";  // Mostrar "Crear cuenta"
         Lusuario.style.display = "none"; // Ocultar el usuario logueado
 
-     
+
     }
 }
 
@@ -72,13 +105,11 @@ auth.onAuthStateChanged((user) => {
             }
         });
 
-        console.log(username)
-       
-        navname.textContent=username
+        navname.textContent = username
     } else {
         console.log("NO esta logeado")
     };
 });
 
 
-console.log("Username del usuario logueado:", username);
+

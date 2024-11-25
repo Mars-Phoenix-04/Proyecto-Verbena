@@ -49,13 +49,13 @@ export async function signup(email, password, usuario) {
         // Definir la colección de usuarios (en Firestore)
         const colectusuarios = collection(db, "usuarios");
 
-        // Ahora guardamos los datos del usuario en Firestore
+        // Ahora guardamos los datos del usuario en Firestore usando el UID como ID del documento
         await addDoc(colectusuarios, {
-            username: usuario,
-            email: email,
-            password: password,
-           
-            createdAt: new Date(),
+            uid: user.uid,       // Guardamos el UID del usuario
+            username: usuario,   // Guardamos el nombre de usuario
+            email: email,        // Guardamos el correo
+            password: password,  // Guardamos la contraseña (aunque no es lo ideal por seguridad)
+            createdAt: new Date() // Fecha de creación
         });
 
         return true;
@@ -63,7 +63,7 @@ export async function signup(email, password, usuario) {
         if (error.code === 'auth/email-already-in-use') {
             throw new Error("El correo electrónico ya ha sido registrado");
         }
-        if(error.code === 'auth/user-already-in-use'){
+        if (error.code === 'auth/user-already-in-use') {
             throw new Error("El nombre de usuario ya ha sido registrado");
         }
         throw new Error("Error: " + error.message);

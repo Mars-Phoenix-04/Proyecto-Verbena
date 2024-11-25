@@ -55,10 +55,45 @@ const db = getFirestore(app);
 const auth = getAuth(app);
 
 
-const users = collection(db, "usuarios");  // Obtener la colección de usuarios
+const USERS = collection(db, "usuarios");  // Obtener la colección de usuarios
 
 // Obtener todos los documentos de la colección de usuarios
-const usersSnap = await getDocs(users);
+const usersSnap = await getDocs(USERS);
 
 // Exporta lo necesario para usar en otras páginas
-export { auth, db, users,usersSnap };
+export {
+    auth, 
+    db, 
+    USERS, 
+    usersSnap, 
+    getDoc, 
+    doc, 
+    updateDoc, 
+    setDoc, 
+    getDocs,
+    // Importando métodos de autenticación de Firebase
+    getAuth,
+    signInWithEmailAndPassword,
+    createUserWithEmailAndPassword,
+    updateProfile,
+    updateEmail,
+    updatePassword,
+    reauthenticateWithCredential,
+    EmailAuthProvider,
+    onAuthStateChanged,
+    signOut,
+    // Importando métodos de Firestore
+    getFirestore,
+    collection,
+    addDoc,
+    deleteDoc,
+    onSnapshot,
+    query,
+    where,
+    orderBy,
+    limit,
+    startAfter,
+    startAt,
+    endAt,
+    endBefore
+}
