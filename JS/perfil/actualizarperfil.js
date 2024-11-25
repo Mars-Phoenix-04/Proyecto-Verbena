@@ -80,21 +80,20 @@ let Npassword = "";
 let Nemail = "";
 
 // Esta es la función para hacer que los campos sean editables
-document
-    .getElementById("Form")
-    .addEventListener("click", function (e) {
-        if (e.target && e.target.classList.contains("edit")) {
-            let svg = e.target;
-            let input = svg.closest('.form-group').querySelector('input');
-            input.readOnly = false;
+document.getElementById("Form").addEventListener("click", function (e) {
+    if (e.target && e.target.classList.contains("edit")) {
+        let svg = e.target;
+        let input = svg.closest('.form-group').querySelector('input');
+        input.readOnly = false;
 
-            Nusername = document.getElementById("username").value;
-            Nemail = document.getElementById("email").value;
-            Npassword = document.getElementById("password").value;
+        // Actualizar las variables con los valores de los campos
+        Nusername = document.getElementById("username").value;
+        Nemail = document.getElementById("email").value;
+        Npassword = document.getElementById("password").value;
 
-            console.log("Campos cargados:", { Nusername, Nemail, Npassword });
-        }
-    });
+        console.log("Campos cargados:", { Nusername, Nemail, Npassword });
+    }
+});
 
 // Asumiendo que tienes un botón para guardar los cambios
 document.getElementById("saveButton").addEventListener("click", saveChanges);
@@ -102,9 +101,10 @@ document.getElementById("saveButton").addEventListener("click", saveChanges);
 async function saveChanges(event) {
     event.preventDefault();
 
-    const usernameN = Nusername;
-    const emailN = Nemail;
-    const passwordN = Npassword;
+    // Obtén los nuevos valores
+    const usernameN = document.getElementById("username").value;
+    const emailN = document.getElementById("email").value;
+    const passwordN = document.getElementById("password").value;
 
     const user = auth.currentUser;
 
@@ -130,16 +130,14 @@ async function saveChanges(event) {
                     await updateDoc(docRef, updatedData);
                     console.log("Documento actualizado con éxito en Firestore");
 
-                    // Actualizamos la contraseña en Firebase Authentication, si es necesario
-                    if (passwordN) {
-                        await user.updatePassword(passwordN);
-                        console.log("Contraseña actualizada con éxito en Firebase Authentication");
+                    // Actualizar la contraseña en Firebase Authentication, si es necesario
+                    if (passwordN && passwordN !== data.password) {
+                        await updateUserPassword(user, passwordN);
                     }
 
-                    // Actualizamos el correo electrónico en Firebase Authentication, si es necesario
+                    // Actualizar el correo electrónico en Firebase Authentication, si es necesario
                     if (emailN && emailN !== user.email) {
-                        await user.updateEmail(emailN);
-                        console.log("Correo electrónico actualizado con éxito en Firebase Authentication");
+                        await updateUserEmail(user, emailN);
                     }
 
                     // Actualizar la interfaz sin recargar la página
@@ -164,8 +162,6 @@ async function saveChanges(event) {
         console.log("Usuario no autenticado");
     }
 }
-
-
 // Verificar formato de correo
 function VerificarEM(email) {
     const papa = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
