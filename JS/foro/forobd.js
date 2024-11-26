@@ -38,58 +38,29 @@ import {
 const panel = document.getElementById('panel');
 const info = document.getElementById('IR');
 
+const conve = document.querySelectorAll(".conve");
+const legend = document.querySelectorAll(".legend");
 
 
 
 
+auth.onAuthStateChanged(user => {
+  // Obtener los elementos con las clases relevantes
 
-window.onload = () => {
-  auth.onAuthStateChanged(user => {
-    // Obtener los elementos con las clases relevantes
-    const conve = document.querySelectorAll(".conve");
-    const legend = document.querySelectorAll(".legend");
 
-    if (user) {
-      console.log("auth: signed in");
+  if (user) {
+    console.log("auth: signed in");
 
-      // Mostrar elementos de comentarios y ocultar leyenda
-      conve.forEach((coment) => {
-        coment.classList.remove("oculto");
-        coment.classList.add("commit");
-      });
+    // Mostrar elementos de comentarios y ocultar leyenda
 
-      legend.forEach((leg) => {
-        leg.classList.remove("legend");
-        leg.classList.add("oculto");
-      });
+    loginCheck(user);
+  } else {
+    console.log("auth: signed out");
 
-      panel.classList.remove("oculto");
-      panel.classList.add("panelcontrol");
-  
-      info.classList.remove("mssg");
-      info.classList.add("oculto");
-    } else {
-      console.log("auth: signed out");
+    loginCheck(user);
+  }
+});
 
-      // Ocultar elementos de comentarios y mostrar leyenda
-      conve.forEach((coment) => {
-        coment.classList.remove("commit");
-        coment.classList.add("oculto");
-      });
-
-      legend.forEach((leg) => {
-        leg.classList.remove("oculto");
-        leg.classList.add("legend");
-      });
-
-      panel.classList.remove("panelcontrol");
-      panel.classList.add("oculto");
-  
-      info.classList.remove("oculto");
-      info.classList.add("mssg");
-    }
-  });
-};
 
 
 
@@ -224,9 +195,7 @@ document.querySelector("#publi").addEventListener("click", async function (e) {
     console.error("El documento de usuario no existe.");
   }
 });
-
-
-function mostrarForo({ tema, usuario, numMensajes, fecha, mensaje }) {
+function mostrarForo(idForo, { tema, usuario, numMensajes, fecha, mensaje }) {
   return `
     <div class="foro">
       <div class="tema" onclick="mostrar(this)">
@@ -241,6 +210,7 @@ function mostrarForo({ tema, usuario, numMensajes, fecha, mensaje }) {
         <div class="title">
           <h3>${tema}</h3>
         </div>
+        <div id="coment">
         <div class="discusion">
           <div class="user">
             <img src="../Assets/img/svg/icons/User.svg" alt="">
@@ -255,13 +225,14 @@ function mostrarForo({ tema, usuario, numMensajes, fecha, mensaje }) {
             </div>
           </div>
         </div>
-        <div id="coment" class="oculto">
+        </div>
+        <div class="commit">
           <input type="text" placeholder="Responder">
-          <button class="send">
+          <button class="send" data-foro-id="${idForo}">
             <img src="../Assets/img/png/play-button.png" alt="">
           </button>
         </div>
-        <div class="legend">
+        <div class="oculto">
           <p>
             <b>
               <a class="linkcuentaB" href="../HTML/iniciarsesion.html">Inicia sesión</a> o
@@ -274,11 +245,11 @@ function mostrarForo({ tema, usuario, numMensajes, fecha, mensaje }) {
   `;
 }
 
-// Función para escuchar cambios en los foros
+// Actualizar el snapshot listener para incluir el ID del foro
 onSnapshot(colecforos, (snapshot) => {
   snapshot.forEach((doc) => {
     const foroData = doc.data();
-    const foroHTML = mostrarForo(foroData);
+    const foroHTML = mostrarForo(doc.id, foroData);
 
     let contenedor;
     if (foroData.categoria === '1') {
@@ -291,9 +262,98 @@ onSnapshot(colecforos, (snapshot) => {
 
     if (contenedor) {
       contenedor.innerHTML += foroHTML;
-
     }
   });
+});
+
+// Delegar eventos para los botones dinámicos
+document.getElementById("FOROS").addEventListener("click", async function (e) {
+  if (e.target && e.target.closest(".send")) {
+    e.preventDefault();
+
+    const boton = e.target.closest(".send");
+    const inputComentario = boton.previousElementSibling; // Input que está antes del botón
+    const foroId = boton.getAttribute("data-foro-id"); // ID del foro asociado
+    const comentario = inputComentario.value;
+
+    if (!comentario.trim()) {
+      alert("Por favor, ingresa un comentario válido.");
+      return;
+    }
+
+    // Obtener usuario actual
+    const user = auth.currentUser;
+    if (!user) {
+      alert("Debes estar autenticado para comentar.");
+      return;
+    }
+
+    const userDocRef = doc(db, "usuarios", user.uid);
+    const userDocSnap = await getDoc(userDocRef);
+
+    if (!userDocSnap.exists()) {
+      alert("No se pudo obtener la información del usuario.");
+      return;
+    }
+
+    const usuario = userDocSnap.data().username;
+
+    // Crear el comentario con fecha
+    const fechaActual = new Date();
+    const dia = fechaActual.getDate();
+    const mes = fechaActual.getMonth() + 1; // Meses empiezan desde 0
+    const año = fechaActual.getFullYear();
+    const fechaFormateada = `${dia < 10 ? '0' + dia : dia}/${mes < 10 ? '0' + mes : mes}/${año}`;
+
+    const nuevoComentario = {
+      usuario,
+      comentario,
+      fecha: fechaFormateada,
+    };
+
+    // Guardar el comentario en una subcolección "comentarios" del foro
+    const foroRef = doc(db, "foros", foroId);
+    const comentariosRef = collection(foroRef, "comentarios");
+    await addDoc(comentariosRef, nuevoComentario);
+
+    // Limpiar el input
+    inputComentario.value = "";
+
+    // Añadir el comentario al DOM
+    const contenedorDiscusion = boton.closest(".d").querySelector(".oculto");
+
+    // Crear el nuevo comentario HTML
+    const nuevoComentarioHTML = `
+      <div class="discusion">
+        <div class="user">
+          <img src="../Assets/img/svg/icons/User.svg" alt="">
+          <h4>${usuario}</h4>
+        </div>
+        <div class="message">
+          <div class="fecha">
+            <p><b>Fecha de Publicación: ${fechaFormateada}</b></p>
+          </div>
+          <div class="mensaje">
+            <p>${comentario}</p>
+          </div>
+        </div>
+      </div>
+    `;
+
+
+    //     // Obtener el contenedor donde agregar el nuevo mensaje
+    const contenedorConversaciones = document.getElementById('coment');
+
+    //     // Asegúrate de que el contenedor exista
+    if (contenedorConversaciones) {
+      contenedorConversaciones.innerHTML += nuevoComentarioHTML; // Agregar el nuevo mensaje al final del contenido existente
+    }
+
+    // Insertar el nuevo comentario al final de la lista de comentarios
+    //contenedorDiscusion.appendChild(nuevoC);  // Esto lo agregará después de cualquier comentario existente
+
+    alert("Comentario agregado exitosamente.");
+  }
 });
 
 
@@ -301,36 +361,19 @@ onSnapshot(colecforos, (snapshot) => {
 
 
 
+const contenedorConversaciones = document.getElementById('coment');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//     // Asegúrate de que el contenedor exista
+if (contenedorConversaciones) {
+  contenedorConversaciones.innerHTML += nuevoComentarioHTML; // Agregar el nuevo mensaje al final del contenido existente
+}
 
 
 
 const loginCheck = (user) => {
   if (user) {
     // Si hay un usuario autenticado
+
     panel.classList.remove("oculto");
     panel.classList.add("panelcontrol");
 
@@ -338,20 +381,34 @@ const loginCheck = (user) => {
     info.classList.add("oculto");
 
     // Iterar sobre los elementos de conve y aplicar las clases
+    conve.forEach((coment) => {
+      coment.classList.remove("oculto");
+      coment.classList.add("commit");
+    });
 
+    legend.forEach((leg) => {
+      leg.classList.remove("legend");
+      leg.classList.add("oculto");
+    });
 
 
 
   } else {
-    // Si el usuario no está autenticado
+    // Ocultar elementos de comentarios y mostrar leyenda
+    conve.forEach((coment) => {
+      coment.classList.remove("commit");
+      coment.classList.add("oculto");
+    });
+
+    legend.forEach((leg) => {
+      leg.classList.remove("oculto");
+      leg.classList.add("legend");
+    });
+
     panel.classList.remove("panelcontrol");
     panel.classList.add("oculto");
 
     info.classList.remove("oculto");
     info.classList.add("mssg");
-
-    // Iterar sobre los elementos de conve y aplicar las clases invertidas
-
-
   }
 }

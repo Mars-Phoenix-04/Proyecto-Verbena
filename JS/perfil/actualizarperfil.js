@@ -44,16 +44,19 @@ const navname = document.getElementById('nameN');
 const Cusuario = document.getElementById('username');
 const Ccorreo = document.getElementById('email');
 const Ccontra = document.getElementById('password');
-
 auth.onAuthStateChanged((user) => {
     if (user) {
         const uid = user.uid; // Obtener UID de Firebase Authentication
 
         // Obtener directamente el documento de Firestore usando el UID
         const docRef = doc(db, 'usuarios', uid);
+
+        // Aquí usamos getDoc correctamente para obtener el documento
         getDoc(docRef).then(docSnap => {
             if (docSnap.exists()) {
                 const data = docSnap.data();
+
+                // Asignar los valores de Firestore a las variables
                 username = data.username;
                 password = data.password;
                 email = data.email;
@@ -101,7 +104,7 @@ document.getElementById("saveButton").addEventListener("click", saveChanges);
 async function saveChanges(event) {
     event.preventDefault();
 
-    // Obtén los nuevos valores
+    // Obtén los nuevos valores de los campos
     const usernameN = document.getElementById("username").value;
     const emailN = document.getElementById("email").value;
     const passwordN = document.getElementById("password").value;
