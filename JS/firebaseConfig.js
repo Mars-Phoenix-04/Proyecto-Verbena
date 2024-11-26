@@ -33,11 +33,6 @@ import {
     endBefore                // Paginación: filtra antes de un valor específico
 } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
 
-
-
-
-
-
 // Configuración de Firebase
 const firebaseConfig = {
     apiKey: "AIzaSyBXtX2P6IsJZRwiuQqodz9yPT7c4V1zQQI",
