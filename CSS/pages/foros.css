@@ -65,7 +65,7 @@ main {
     cursor: pointer;
 }
 .foro h3, .nomensajes{
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-family: var(--estilot);
     text-align: left;
     margin-left: 3%;
