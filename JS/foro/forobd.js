@@ -35,18 +35,61 @@ import {
   endBefore
 } from '../firebaseConfig.js';
 
+const panel = document.getElementById('panel');
+const info = document.getElementById('IR');
 
-auth.onAuthStateChanged(user => {
-  if (user) {
-    console.log("auth: signed in");
-    // Mostrar los datos de todos los usuarios
 
-    loginCheck(user);
-  } else {
-    console.log("auth: signed out");
-    loginCheck(user);
-  }
-});
+
+
+
+
+window.onload = () => {
+  auth.onAuthStateChanged(user => {
+    // Obtener los elementos con las clases relevantes
+    const conve = document.querySelectorAll(".conve");
+    const legend = document.querySelectorAll(".legend");
+
+    if (user) {
+      console.log("auth: signed in");
+
+      // Mostrar elementos de comentarios y ocultar leyenda
+      conve.forEach((coment) => {
+        coment.classList.remove("oculto");
+        coment.classList.add("commit");
+      });
+
+      legend.forEach((leg) => {
+        leg.classList.remove("legend");
+        leg.classList.add("oculto");
+      });
+
+      panel.classList.remove("oculto");
+      panel.classList.add("panelcontrol");
+  
+      info.classList.remove("mssg");
+      info.classList.add("oculto");
+    } else {
+      console.log("auth: signed out");
+
+      // Ocultar elementos de comentarios y mostrar leyenda
+      conve.forEach((coment) => {
+        coment.classList.remove("commit");
+        coment.classList.add("oculto");
+      });
+
+      legend.forEach((leg) => {
+        leg.classList.remove("oculto");
+        leg.classList.add("legend");
+      });
+
+      panel.classList.remove("panelcontrol");
+      panel.classList.add("oculto");
+  
+      info.classList.remove("oculto");
+      info.classList.add("mssg");
+    }
+  });
+};
 
 
 
@@ -213,13 +256,13 @@ function mostrarForo({ tema, usuario, numMensajes, fecha, mensaje }) {
             </div>
           </div>
         </div>
-        <div id="coment" class="commit">
+        <div id="coment" class="oculto">
           <input type="text" placeholder="Responder">
           <button class="send">
             <img src="../Assets/img/png/play-button.png" alt="">
           </button>
         </div>
-        <div class="oculto">
+        <div class="legend">
           <p>
             <b>
               <a class="linkcuentaB" href="../HTML/iniciarsesion.html">Inicia sesión</a> o
@@ -286,36 +329,6 @@ onSnapshot(colecforos, (snapshot) => {
 
 
 
-
-
-
-
-
-
-auth.onAuthStateChanged(user => {
-  if (user) {
-    console.log("auth: signed in");
-    // Mostrar los datos de todos los usuarios
-
-    loginCheck(user);
-  } else {
-    console.log("auth: signed out");
-    loginCheck(user);
-  }
-});
-
-
-
-
-
-
-const panel = document.getElementById('panel');
-const info = document.getElementById('IR');
-const conve = document.querySelectorAll('#coment');
-const legend = document.querySelectorAll('.legend');
-
-
-
 const loginCheck = (user) => {
   if (user) {
     // Si hay un usuario autenticado
@@ -326,18 +339,9 @@ const loginCheck = (user) => {
     info.classList.add("oculto");
 
     // Iterar sobre los elementos de conve y aplicar las clases
-    conve.forEach((coment) => {
-      coment.classList.remove("oculto");
-      coment.classList.add("commit");
-    });
 
-    // Iterar sobre los elementos de legend y aplicar las clases
-    legend.forEach((leg) => {
-      leg.classList.remove("legend");
-      leg.classList.add("oculto");
-    });
 
- 
+
 
   } else {
     // Si el usuario no está autenticado
@@ -348,17 +352,7 @@ const loginCheck = (user) => {
     info.classList.add("mssg");
 
     // Iterar sobre los elementos de conve y aplicar las clases invertidas
-    conve.forEach((coment) => {
-      coment.classList.remove("commit");
-      coment.classList.add("oculto");
-    });
 
-    // Iterar sobre los elementos de legend y aplicar las clases invertidas
-    legend.forEach((leg) => {
-      leg.classList.remove("oculto");
-      leg.classList.add("legend");
-    });
 
-  
   }
 }
