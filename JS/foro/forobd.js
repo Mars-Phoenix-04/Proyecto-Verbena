@@ -213,13 +213,13 @@ function mostrarForo({ tema, usuario, numMensajes, fecha, mensaje }) {
             </div>
           </div>
         </div>
-        <div id="coment" class="oculto">
+        <div id="coment" class="commit">
           <input type="text" placeholder="Responder">
           <button class="send">
             <img src="../Assets/img/png/play-button.png" alt="">
           </button>
         </div>
-        <div class="legend">
+        <div class="oculto">
           <p>
             <b>
               <a class="linkcuentaB" href="../HTML/iniciarsesion.html">Inicia sesión</a> o
@@ -250,31 +250,9 @@ onSnapshot(colecforos, (snapshot) => {
     if (contenedor) {
       contenedor.innerHTML += foroHTML;
 
-      // Aquí puedes llamar a la función loginCheck para aplicar las clases correctas después de cargar los foros
-      loginCheck(auth.currentUser);
     }
   });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
