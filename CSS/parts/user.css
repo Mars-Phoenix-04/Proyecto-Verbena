@@ -28,9 +28,11 @@
     border-radius: 50%;
 }
 .username {
-    margin-left: 20%; 
     text-decoration: none;
     color: white;
+}
+.user-container a{
+    margin-left: 20%; 
 }
 a{
     text-decoration: none;
