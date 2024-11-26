@@ -108,6 +108,8 @@ main {
 
     position: relative;
 
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 .title{
     background-color: #362040;
