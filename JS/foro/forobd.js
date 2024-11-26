@@ -231,7 +231,6 @@ function mostrarForo({ tema, usuario, numMensajes, fecha, mensaje }) {
     <div class="foro">
       <div class="tema" onclick="mostrar(this)">
         <h3>${tema}</h3>
-        <span class="nomensajes">No. Mensajes: ${numMensajes}</span>
         <span class="usuario">
           <img src="../Assets/img/svg/icons/User.svg">
           <p>${usuario}</p>
