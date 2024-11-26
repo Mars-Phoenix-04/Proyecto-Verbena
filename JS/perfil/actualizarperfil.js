@@ -182,8 +182,7 @@ logout.addEventListener('click', e => {
     auth.signOut().then(() => {
         const fuga = confirm('¿Estás seguro que deseas salir?');
         if (fuga) {
-            // window.location.href = "../index.html";
-            window.location.reload();
+            window.location.href = "../index.html";
             console.log("Sirvio")
         }
     })
