@@ -34,7 +34,7 @@ import {
   endAt,
   endBefore
 } from '../firebaseConfig.js';
-
+ 
 const panel = document.getElementById('panel');
 const info = document.getElementById('IR');
 

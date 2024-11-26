@@ -192,7 +192,7 @@ logout.addEventListener('click', e => {
 
 });
 
-
+ 
 
 
 export function updateNavName(newUsername) {
