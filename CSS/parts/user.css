@@ -29,4 +29,6 @@
 }
 .username {
     margin-left: 20%; 
+    text-decoration: none;
+    color: white;
 }
